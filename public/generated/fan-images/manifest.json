@@ -1,0 +1,1848 @@
+{
+  "schema_version": 1,
+  "kind": "synthetic-fan-images",
+  "model": "gpt-image-2",
+  "updated_at": "2026-08-02T23:45:01.567066+00:00",
+  "items": [
+    {
+      "id": "fan-001-foggy-arrival",
+      "index": 1,
+      "status": "completed",
+      "file": "generated/fan-images/fan-001-foggy-arrival.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: attendees arriving through a tree-lined entrance.\nViewpoint: walking behind a small group carrying jackets.\nTime: early afternoon.\nVisual details: cool fog between eucalyptus trees and orange wristbands.\nNatural action: the group points toward distant stage lights.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 286,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 286
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1658,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:19:43.910007+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-002-wristband-check",
+      "index": 2,
+      "status": "completed",
+      "file": "generated/fan-images/fan-002-wristband-check.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: friends comparing their festival wristbands.\nViewpoint: close phone-camera view at waist height.\nTime: early afternoon.\nVisual details: three orange cloth wristbands, layered sleeves, and grass.\nNatural action: hands move together for a quick celebratory photo.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 289,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 289
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1661,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:19:42.873755+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-003-daytime-main-stage",
+      "index": 3,
+      "status": "completed",
+      "file": "generated/fan-images/fan-003-daytime-main-stage.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: the first large daytime crowd gathering at the main stage.\nViewpoint: middle of the audience.\nTime: afternoon.\nVisual details: three vertical LED towers framed by tall dark trees.\nNatural action: people sway while late arrivals weave through the crowd.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 287,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 287
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1659,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:20:25.354457+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-004-hillside-blankets",
+      "index": 4,
+      "status": "completed",
+      "file": "generated/fan-images/fan-004-hillside-blankets.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: friends resting on blankets above the crowd.\nViewpoint: seated on a grassy hill.\nTime: afternoon.\nVisual details: foggy skyline, reusable cups, jackets, and colorful blankets.\nNatural action: one friend stands and waves toward the distant stage.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 288,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 288
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1660,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:20:30.192598+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-005-festival-food",
+      "index": 5,
+      "status": "completed",
+      "file": "generated/fan-images/fan-005-festival-food.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: a quick food break between performances.\nViewpoint: close view across a shared picnic table.\nTime: afternoon.\nVisual details: messy festival snacks, compostable trays, and wristbanded hands.\nNatural action: friends reach into the frame to share fries.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 289,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 289
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1661,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:21:08.727519+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-006-crowd-dancing",
+      "index": 6,
+      "status": "completed",
+      "file": "generated/fan-images/fan-006-crowd-dancing.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: a spontaneous dance circle opening in the audience.\nViewpoint: shoulder-height view from just outside the circle.\nTime: late afternoon.\nVisual details: layered festival clothing and amber light through fog.\nNatural action: anonymous friends laugh and dance imperfectly.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 287,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 287
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1659,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:21:14.017163+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-007-phones-in-air",
+      "index": 7,
+      "status": "completed",
+      "file": "generated/fan-images/fan-007-phones-in-air.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: the audience raising phones as the stage lights switch on.\nViewpoint: packed middle crowd.\nTime: golden hour.\nVisual details: glowing phone screens, silhouettes, and amber LED towers.\nNatural action: hands rise and briefly block the camera.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 286,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 286
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1658,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:21:48.319832+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-008-golden-stage",
+      "index": 8,
+      "status": "completed",
+      "file": "generated/fan-images/fan-008-golden-stage.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: a distant performer beginning a golden-hour set.\nViewpoint: slightly off-center audience view.\nTime: golden hour.\nVisual details: orange sunlight, cool fog, and teal stage accents.\nNatural action: the unidentifiable performer crosses the distant stage.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 288,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 288
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1660,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:21:52.652624+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-009-confetti-burst",
+      "index": 9,
+      "status": "completed",
+      "file": "generated/fan-images/fan-009-confetti-burst.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: the first confetti burst over an excited crowd.\nViewpoint: near the front but behind several raised hands.\nTime: dusk.\nVisual details: purple light, orange confetti, and fog catching the beams.\nNatural action: the crowd jumps and the camera jolts upward.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 293,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 293
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1665,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:22:29.425675+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-010-performer-silhouette",
+      "index": 10,
+      "status": "completed",
+      "file": "generated/fan-images/fan-010-performer-silhouette.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: an anonymous musician silhouetted against an LED wall.\nViewpoint: zoomed phone view from far back in the audience.\nTime: dusk.\nVisual details: magenta backlight and a soft halo of stage fog.\nNatural action: the tiny silhouette raises one arm toward the crowd.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 294,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 294
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1666,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:22:33.319608+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-011-between-stages",
+      "index": 11,
+      "status": "completed",
+      "file": "generated/fan-images/fan-011-between-stages.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: attendees walking from one stage to another.\nViewpoint: following the flow along a wooded park path.\nTime: dusk.\nVisual details: string lights, food stalls, jackets, and blue fog.\nNatural action: people pass close to the lens and briefly obscure the view.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 292,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 292
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1664,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:23:08.688525+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-012-friends-laughing",
+      "index": 12,
+      "status": "completed",
+      "file": "generated/fan-images/fan-012-friends-laughing.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: a candid moment of fictional friends laughing together.\nViewpoint: arm's-length phone view with imperfect framing.\nTime: dusk.\nVisual details: soft purple light on faces and foggy trees behind them.\nNatural action: one friend leans into frame a moment late.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 291,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 291
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1663,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:23:20.209155+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-013-snack-closeup",
+      "index": 13,
+      "status": "completed",
+      "file": "generated/fan-images/fan-013-snack-closeup.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: a colorful festival snack held up against the crowd.\nViewpoint: close-up from the owner's point of view.\nTime: dusk.\nVisual details: wristband, paper tray, defocused lights, and grassy ground.\nNatural action: the hand shifts as someone bumps the photographer.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 293,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 293
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1665,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:23:51.043762+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-014-muddy-sneakers",
+      "index": 14,
+      "status": "completed",
+      "file": "generated/fan-images/fan-014-muddy-sneakers.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: muddy shoes after hours of walking and dancing.\nViewpoint: camera pointed down at several pairs of feet.\nTime: dusk.\nVisual details: trampled grass, confetti scraps, and orange wristbands at the edge.\nNatural action: one pair of shoes taps to a distant beat.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 295,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 295
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1667,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:24:03.027289+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-015-wristband-detail",
+      "index": 15,
+      "status": "completed",
+      "file": "generated/fan-images/fan-015-wristband-detail.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: an orange festival wristband held toward the stage.\nViewpoint: close-up with a shallow phone-camera focus.\nTime: dusk.\nVisual details: purple and amber stage lights blurred into soft circles.\nNatural action: the wrist turns while the background crowd moves.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 289,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 289
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1661,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:24:29.843701+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-016-sunset-crowd",
+      "index": 16,
+      "status": "completed",
+      "file": "generated/fan-images/fan-016-sunset-crowd.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: the audience watching the last light disappear behind the trees.\nViewpoint: wide view from the rear of the field.\nTime: sunset.\nVisual details: peach sky, blue fog, dark trees, and warm stage lighting.\nNatural action: people settle into place for the evening headliner.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 295,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 295
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1667,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:24:46.719380+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-017-fog-rolls-in",
+      "index": 17,
+      "status": "completed",
+      "file": "generated/fan-images/fan-017-fog-rolls-in.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: a thick bank of San Francisco fog moving through the festival.\nViewpoint: side view across the crowd and trees.\nTime: blue hour.\nVisual details: stage beams becoming visible in the mist.\nNatural action: attendees pull on jackets as the light changes.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 289,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 289
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1661,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:25:08.575260+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-018-purple-stage",
+      "index": 18,
+      "status": "completed",
+      "file": "generated/fan-images/fan-018-purple-stage.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: a high-energy stage moment under saturated purple lights.\nViewpoint: middle crowd behind dancing silhouettes.\nTime: night.\nVisual details: purple LED towers, amber spotlights, and rolling fog.\nNatural action: the crowd bounces while autofocus briefly hunts.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 288,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 288
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1660,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:25:30.784044+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-019-laser-hands",
+      "index": 19,
+      "status": "completed",
+      "file": "generated/fan-images/fan-019-laser-hands.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: hands crossing through teal laser beams above the audience.\nViewpoint: low phone angle from inside the packed crowd.\nTime: night.\nVisual details: teal lasers, magenta haze, and blown-out highlights.\nNatural action: several arms move across the lens in rhythm.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 291,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 291
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1663,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:25:52.278231+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-020-quiet-acoustic",
+      "index": 20,
+      "status": "completed",
+      "file": "generated/fan-images/fan-020-quiet-acoustic.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: a quiet acoustic passage holding the audience still.\nViewpoint: rear crowd view between two silhouettes.\nTime: night.\nVisual details: one warm spotlight surrounded by dark foggy trees.\nNatural action: phone flashlights slowly appear across the field.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 286,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 286
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1658,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:26:09.752331+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-021-front-rail",
+      "index": 21,
+      "status": "completed",
+      "file": "generated/fan-images/fan-021-front-rail.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: an intense moment near the front rail.\nViewpoint: shoulder-height behind tightly packed attendees.\nTime: night.\nVisual details: bright white strobes, purple haze, and raised hands.\nNatural action: the camera shakes as the crowd reacts.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 286,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 286
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1658,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:26:34.498663+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-022-rear-crowd",
+      "index": 22,
+      "status": "completed",
+      "file": "generated/fan-images/fan-022-rear-crowd.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: the full nighttime stage seen above a sea of people.\nViewpoint: far rear of the main field.\nTime: night.\nVisual details: three vertical LED towers and amber lights under black trees.\nNatural action: a few people walk across the foreground.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 288,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 288
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1660,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:26:53.225739+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-023-accidental-selfie",
+      "index": 23,
+      "status": "completed",
+      "file": "generated/fan-images/fan-023-accidental-selfie.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: a playful accidental selfie before turning back to the stage.\nViewpoint: very close arm's-length phone view.\nTime: night.\nVisual details: fictional friends partly cut off by the frame and purple backlight.\nNatural action: the phone swings away toward the distant lights.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 292,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 292
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1664,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:27:14.003972+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-024-jacket-crowd",
+      "index": 24,
+      "status": "completed",
+      "file": "generated/fan-images/fan-024-jacket-crowd.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: bundled-up attendees dancing as the park gets colder.\nViewpoint: casual view from behind a group in jackets.\nTime: night.\nVisual details: beanies, windbreakers, teal lights, and dense fog.\nNatural action: the group huddles together and keeps dancing.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 294,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 294
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1666,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:27:34.905677+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-025-night-food-lights",
+      "index": 25,
+      "status": "completed",
+      "file": "generated/fan-images/fan-025-night-food-lights.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: a glowing food area during the evening rush.\nViewpoint: walking past counters from the path.\nTime: night.\nVisual details: warm bulbs, steam, silhouettes, and wet-looking pavement.\nNatural action: people cross close to the camera carrying trays.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 288,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 288
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1660,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:27:52.296964+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-026-stage-exit",
+      "index": 26,
+      "status": "completed",
+      "file": "generated/fan-images/fan-026-stage-exit.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: fans pouring away from one stage after a set.\nViewpoint: moving with the crowd along a dark park path.\nTime: night.\nVisual details: backlit fog, string lights, and jackets tied around waists.\nNatural action: the flow of people turns toward another distant stage.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 295,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 295
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1667,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:28:16.606396+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-027-final-song",
+      "index": 27,
+      "status": "completed",
+      "file": "generated/fan-images/fan-027-final-song.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: the final song erupting in light across the main field.\nViewpoint: middle crowd with an unobstructed moment toward the stage.\nTime: late night.\nVisual details: white beams, purple LED towers, confetti, and fog.\nNatural action: everyone raises their hands for the last chorus-like swell.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 300,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 300
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1672,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:28:32.331607+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-028-confetti-ground",
+      "index": 28,
+      "status": "completed",
+      "file": "generated/fan-images/fan-028-confetti-ground.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: the colorful aftermath immediately after the final set.\nViewpoint: camera tilted toward the trampled grass.\nTime: late night.\nVisual details: confetti, paper cups, muddy shoes, and fading purple light.\nNatural action: feet shuffle slowly toward the exits.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 290,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 290
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1662,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:28:58.259322+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-029-tired-friends",
+      "index": 29,
+      "status": "completed",
+      "file": "generated/fan-images/fan-029-tired-friends.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: fictional friends taking one exhausted final group photo.\nViewpoint: arm's-length phone view near a tree-lined exit.\nTime: late night.\nVisual details: rumpled jackets, orange wristbands, fog, and distant lights.\nNatural action: the friends lean together and smile imperfectly.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 295,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 295
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1667,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:29:12.090012+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-030-emptying-park",
+      "index": 30,
+      "status": "completed",
+      "file": "generated/fan-images/fan-030-emptying-park.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nMoment: the festival field emptying after the music ends.\nViewpoint: wide backward glance while walking away.\nTime: late night.\nVisual details: dim stage lights, lingering fog, scattered silhouettes, and trees.\nNatural action: small groups drift toward the exit as lights power down.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 1; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 293,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 293
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1665,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:29:38.092540+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-031-foggy-arrival",
+      "index": 31,
+      "status": "completed",
+      "file": "generated/fan-images/fan-031-foggy-arrival.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it vertically in a natural 2:3 phone-photo frame.\n\nMoment: attendees arriving through a tree-lined entrance.\nViewpoint: walking behind a small group carrying jackets.\nTime: early afternoon.\nVisual details: cool fog between eucalyptus trees and orange wristbands.\nNatural action: the group points toward distant stage lights.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "portrait",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 300,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 300
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1672,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:31:41.104947+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-032-wristband-check",
+      "index": 32,
+      "status": "completed",
+      "file": "generated/fan-images/fan-032-wristband-check.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it vertically in a natural 2:3 phone-photo frame.\n\nMoment: friends comparing their festival wristbands.\nViewpoint: close phone-camera view at waist height.\nTime: early afternoon.\nVisual details: three orange cloth wristbands, layered sleeves, and grass.\nNatural action: hands move together for a quick celebratory photo.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "portrait",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 303,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 303
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1675,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:31:42.179061+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-033-daytime-main-stage",
+      "index": 33,
+      "status": "completed",
+      "file": "generated/fan-images/fan-033-daytime-main-stage.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it vertically in a natural 2:3 phone-photo frame.\n\nMoment: the first large daytime crowd gathering at the main stage.\nViewpoint: middle of the audience.\nTime: afternoon.\nVisual details: three vertical LED towers framed by tall dark trees.\nNatural action: people sway while late arrivals weave through the crowd.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "portrait",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 301,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 301
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1673,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:32:23.492601+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-034-hillside-blankets",
+      "index": 34,
+      "status": "completed",
+      "file": "generated/fan-images/fan-034-hillside-blankets.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it vertically in a natural 2:3 phone-photo frame.\n\nMoment: friends resting on blankets above the crowd.\nViewpoint: seated on a grassy hill.\nTime: afternoon.\nVisual details: foggy skyline, reusable cups, jackets, and colorful blankets.\nNatural action: one friend stands and waves toward the distant stage.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "portrait",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 302,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 302
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1674,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:32:23.457251+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-035-festival-food",
+      "index": 35,
+      "status": "completed",
+      "file": "generated/fan-images/fan-035-festival-food.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it vertically in a natural 2:3 phone-photo frame.\n\nMoment: a quick food break between performances.\nViewpoint: close view across a shared picnic table.\nTime: afternoon.\nVisual details: messy festival snacks, compostable trays, and wristbanded hands.\nNatural action: friends reach into the frame to share fries.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "portrait",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 303,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 303
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1675,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:33:05.761815+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-036-crowd-dancing",
+      "index": 36,
+      "status": "completed",
+      "file": "generated/fan-images/fan-036-crowd-dancing.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it vertically in a natural 2:3 phone-photo frame.\n\nMoment: a spontaneous dance circle opening in the audience.\nViewpoint: shoulder-height view from just outside the circle.\nTime: late afternoon.\nVisual details: layered festival clothing and amber light through fog.\nNatural action: anonymous friends laugh and dance imperfectly.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "portrait",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 301,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 301
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1673,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:33:07.379231+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-037-phones-in-air",
+      "index": 37,
+      "status": "completed",
+      "file": "generated/fan-images/fan-037-phones-in-air.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it vertically in a natural 2:3 phone-photo frame.\n\nMoment: the audience raising phones as the stage lights switch on.\nViewpoint: packed middle crowd.\nTime: golden hour.\nVisual details: glowing phone screens, silhouettes, and amber LED towers.\nNatural action: hands rise and briefly block the camera.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "portrait",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 300,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 300
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1672,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:33:43.241308+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-038-golden-stage",
+      "index": 38,
+      "status": "completed",
+      "file": "generated/fan-images/fan-038-golden-stage.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it vertically in a natural 2:3 phone-photo frame.\n\nMoment: a distant performer beginning a golden-hour set.\nViewpoint: slightly off-center audience view.\nTime: golden hour.\nVisual details: orange sunlight, cool fog, and teal stage accents.\nNatural action: the unidentifiable performer crosses the distant stage.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "portrait",
+      "size": "1024x1536",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 302,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 302
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1674,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:33:50.658495+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-039-confetti-burst",
+      "index": 39,
+      "status": "completed",
+      "file": "generated/fan-images/fan-039-confetti-burst.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: the first confetti burst over an excited crowd.\nViewpoint: near the front but behind several raised hands.\nTime: dusk.\nVisual details: purple light, orange confetti, and fog catching the beams.\nNatural action: the crowd jumps and the camera jolts upward.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "skipped_existing": true,
+      "synthetic": true
+    },
+    {
+      "id": "fan-040-performer-silhouette",
+      "index": 40,
+      "status": "completed",
+      "file": "generated/fan-images/fan-040-performer-silhouette.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: an anonymous musician silhouetted against an LED wall.\nViewpoint: zoomed phone view from far back in the audience.\nTime: dusk.\nVisual details: magenta backlight and a soft halo of stage fog.\nNatural action: the tiny silhouette raises one arm toward the crowd.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "skipped_existing": true,
+      "synthetic": true
+    },
+    {
+      "id": "fan-041-between-stages",
+      "index": 41,
+      "status": "completed",
+      "file": "generated/fan-images/fan-041-between-stages.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: attendees walking from one stage to another.\nViewpoint: following the flow along a wooded park path.\nTime: dusk.\nVisual details: string lights, food stalls, jackets, and blue fog.\nNatural action: people pass close to the lens and briefly obscure the view.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 315,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 315
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1687,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:35:44.305702+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-042-friends-laughing",
+      "index": 42,
+      "status": "completed",
+      "file": "generated/fan-images/fan-042-friends-laughing.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: a candid moment of fictional friends laughing together.\nViewpoint: arm's-length phone view with imperfect framing.\nTime: dusk.\nVisual details: soft purple light on faces and foggy trees behind them.\nNatural action: one friend leans into frame a moment late.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 314,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 314
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1686,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:35:42.142157+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-043-snack-closeup",
+      "index": 43,
+      "status": "completed",
+      "file": "generated/fan-images/fan-043-snack-closeup.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: a colorful festival snack held up against the crowd.\nViewpoint: close-up from the owner's point of view.\nTime: dusk.\nVisual details: wristband, paper tray, defocused lights, and grassy ground.\nNatural action: the hand shifts as someone bumps the photographer.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 316,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 316
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1688,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:36:23.569164+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-044-muddy-sneakers",
+      "index": 44,
+      "status": "completed",
+      "file": "generated/fan-images/fan-044-muddy-sneakers.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: muddy shoes after hours of walking and dancing.\nViewpoint: camera pointed down at several pairs of feet.\nTime: dusk.\nVisual details: trampled grass, confetti scraps, and orange wristbands at the edge.\nNatural action: one pair of shoes taps to a distant beat.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 318,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 318
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1690,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:36:31.094076+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-045-wristband-detail",
+      "index": 45,
+      "status": "completed",
+      "file": "generated/fan-images/fan-045-wristband-detail.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: an orange festival wristband held toward the stage.\nViewpoint: close-up with a shallow phone-camera focus.\nTime: dusk.\nVisual details: purple and amber stage lights blurred into soft circles.\nNatural action: the wrist turns while the background crowd moves.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 312,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 312
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1684,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:37:07.908004+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-046-sunset-crowd",
+      "index": 46,
+      "status": "completed",
+      "file": "generated/fan-images/fan-046-sunset-crowd.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: the audience watching the last light disappear behind the trees.\nViewpoint: wide view from the rear of the field.\nTime: sunset.\nVisual details: peach sky, blue fog, dark trees, and warm stage lighting.\nNatural action: people settle into place for the evening headliner.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 318,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 318
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1690,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:37:11.446902+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-047-fog-rolls-in",
+      "index": 47,
+      "status": "completed",
+      "file": "generated/fan-images/fan-047-fog-rolls-in.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: a thick bank of San Francisco fog moving through the festival.\nViewpoint: side view across the crowd and trees.\nTime: blue hour.\nVisual details: stage beams becoming visible in the mist.\nNatural action: attendees pull on jackets as the light changes.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 312,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 312
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1684,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:37:48.777409+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-048-purple-stage",
+      "index": 48,
+      "status": "completed",
+      "file": "generated/fan-images/fan-048-purple-stage.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: a high-energy stage moment under saturated purple lights.\nViewpoint: middle crowd behind dancing silhouettes.\nTime: night.\nVisual details: purple LED towers, amber spotlights, and rolling fog.\nNatural action: the crowd bounces while autofocus briefly hunts.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 311,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 311
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1683,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:37:51.229723+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-049-laser-hands",
+      "index": 49,
+      "status": "completed",
+      "file": "generated/fan-images/fan-049-laser-hands.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: hands crossing through teal laser beams above the audience.\nViewpoint: low phone angle from inside the packed crowd.\nTime: night.\nVisual details: teal lasers, magenta haze, and blown-out highlights.\nNatural action: several arms move across the lens in rhythm.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 314,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 314
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1686,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:38:29.470272+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-050-quiet-acoustic",
+      "index": 50,
+      "status": "completed",
+      "file": "generated/fan-images/fan-050-quiet-acoustic.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: a quiet acoustic passage holding the audience still.\nViewpoint: rear crowd view between two silhouettes.\nTime: night.\nVisual details: one warm spotlight surrounded by dark foggy trees.\nNatural action: phone flashlights slowly appear across the field.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 309,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 309
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1681,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:38:36.439976+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-051-front-rail",
+      "index": 51,
+      "status": "completed",
+      "file": "generated/fan-images/fan-051-front-rail.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: an intense moment near the front rail.\nViewpoint: shoulder-height behind tightly packed attendees.\nTime: night.\nVisual details: bright white strobes, purple haze, and raised hands.\nNatural action: the camera shakes as the crowd reacts.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 309,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 309
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1681,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:39:15.590932+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-052-rear-crowd",
+      "index": 52,
+      "status": "completed",
+      "file": "generated/fan-images/fan-052-rear-crowd.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: the full nighttime stage seen above a sea of people.\nViewpoint: far rear of the main field.\nTime: night.\nVisual details: three vertical LED towers and amber lights under black trees.\nNatural action: a few people walk across the foreground.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 311,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 311
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1683,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:39:19.848739+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-053-accidental-selfie",
+      "index": 53,
+      "status": "completed",
+      "file": "generated/fan-images/fan-053-accidental-selfie.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: a playful accidental selfie before turning back to the stage.\nViewpoint: very close arm's-length phone view.\nTime: night.\nVisual details: fictional friends partly cut off by the frame and purple backlight.\nNatural action: the phone swings away toward the distant lights.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 315,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 315
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1687,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:39:58.475854+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-054-jacket-crowd",
+      "index": 54,
+      "status": "completed",
+      "file": "generated/fan-images/fan-054-jacket-crowd.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: bundled-up attendees dancing as the park gets colder.\nViewpoint: casual view from behind a group in jackets.\nTime: night.\nVisual details: beanies, windbreakers, teal lights, and dense fog.\nNatural action: the group huddles together and keeps dancing.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 317,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 317
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1689,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:40:02.533720+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-055-night-food-lights",
+      "index": 55,
+      "status": "completed",
+      "file": "generated/fan-images/fan-055-night-food-lights.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: a glowing food area during the evening rush.\nViewpoint: walking past counters from the path.\nTime: night.\nVisual details: warm bulbs, steam, silhouettes, and wet-looking pavement.\nNatural action: people cross close to the camera carrying trays.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 311,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 311
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1683,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:40:41.017127+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-056-stage-exit",
+      "index": 56,
+      "status": "completed",
+      "file": "generated/fan-images/fan-056-stage-exit.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: fans pouring away from one stage after a set.\nViewpoint: moving with the crowd along a dark park path.\nTime: night.\nVisual details: backlit fog, string lights, and jackets tied around waists.\nNatural action: the flow of people turns toward another distant stage.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 318,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 318
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1690,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:40:42.644491+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-057-final-song",
+      "index": 57,
+      "status": "completed",
+      "file": "generated/fan-images/fan-057-final-song.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: the final song erupting in light across the main field.\nViewpoint: middle crowd with an unobstructed moment toward the stage.\nTime: late night.\nVisual details: white beams, purple LED towers, confetti, and fog.\nNatural action: everyone raises their hands for the last chorus-like swell.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 323,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 323
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1695,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:41:25.209345+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-058-confetti-ground",
+      "index": 58,
+      "status": "completed",
+      "file": "generated/fan-images/fan-058-confetti-ground.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: the colorful aftermath immediately after the final set.\nViewpoint: camera tilted toward the trampled grass.\nTime: late night.\nVisual details: confetti, paper cups, muddy shoes, and fading purple light.\nNatural action: feet shuffle slowly toward the exits.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 313,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 313
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1685,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:41:27.090840+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-059-tired-friends",
+      "index": 59,
+      "status": "completed",
+      "file": "generated/fan-images/fan-059-tired-friends.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: fictional friends taking one exhausted final group photo.\nViewpoint: arm's-length phone view near a tree-lined exit.\nTime: late night.\nVisual details: rumpled jackets, orange wristbands, fog, and distant lights.\nNatural action: the friends lean together and smile imperfectly.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 318,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 318
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1690,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:42:07.958089+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-060-emptying-park",
+      "index": 60,
+      "status": "completed",
+      "file": "generated/fan-images/fan-060-emptying-park.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: the festival field emptying after the music ends.\nViewpoint: wide backward glance while walking away.\nTime: late night.\nVisual details: dim stage lights, lingering fog, scattered silhouettes, and trees.\nNatural action: small groups drift toward the exit as lights power down.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 2; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 316,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 316
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1688,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:42:08.350126+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-061-foggy-arrival",
+      "index": 61,
+      "status": "completed",
+      "file": "generated/fan-images/fan-061-foggy-arrival.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: attendees arriving through a tree-lined entrance.\nViewpoint: walking behind a small group carrying jackets.\nTime: early afternoon.\nVisual details: cool fog between eucalyptus trees and orange wristbands.\nNatural action: the group points toward distant stage lights.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 3; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 309,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 309
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1681,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:42:50.638547+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-062-wristband-check",
+      "index": 62,
+      "status": "completed",
+      "file": "generated/fan-images/fan-062-wristband-check.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: friends comparing their festival wristbands.\nViewpoint: close phone-camera view at waist height.\nTime: early afternoon.\nVisual details: three orange cloth wristbands, layered sleeves, and grass.\nNatural action: hands move together for a quick celebratory photo.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 3; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 312,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 312
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1684,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:42:51.111263+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-063-daytime-main-stage",
+      "index": 63,
+      "status": "completed",
+      "file": "generated/fan-images/fan-063-daytime-main-stage.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: the first large daytime crowd gathering at the main stage.\nViewpoint: middle of the audience.\nTime: afternoon.\nVisual details: three vertical LED towers framed by tall dark trees.\nNatural action: people sway while late arrivals weave through the crowd.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 3; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 310,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 310
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1682,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:43:34.269078+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-064-hillside-blankets",
+      "index": 64,
+      "status": "completed",
+      "file": "generated/fan-images/fan-064-hillside-blankets.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: friends resting on blankets above the crowd.\nViewpoint: seated on a grassy hill.\nTime: afternoon.\nVisual details: foggy skyline, reusable cups, jackets, and colorful blankets.\nNatural action: one friend stands and waves toward the distant stage.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 3; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 311,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 311
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1683,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:43:36.527171+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-065-festival-food",
+      "index": 65,
+      "status": "completed",
+      "file": "generated/fan-images/fan-065-festival-food.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: a quick food break between performances.\nViewpoint: close view across a shared picnic table.\nTime: afternoon.\nVisual details: messy festival snacks, compostable trays, and wristbanded hands.\nNatural action: friends reach into the frame to share fries.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 3; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 312,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 312
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1684,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:44:17.124174+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-066-crowd-dancing",
+      "index": 66,
+      "status": "completed",
+      "file": "generated/fan-images/fan-066-crowd-dancing.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: a spontaneous dance circle opening in the audience.\nViewpoint: shoulder-height view from just outside the circle.\nTime: late afternoon.\nVisual details: layered festival clothing and amber light through fog.\nNatural action: anonymous friends laugh and dance imperfectly.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 3; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 310,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 310
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1682,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:44:16.297148+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-067-phones-in-air",
+      "index": 67,
+      "status": "completed",
+      "file": "generated/fan-images/fan-067-phones-in-air.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: the audience raising phones as the stage lights switch on.\nViewpoint: packed middle crowd.\nTime: golden hour.\nVisual details: glowing phone screens, silhouettes, and amber LED towers.\nNatural action: hands rise and briefly block the camera.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 3; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 309,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 309
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1681,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:44:57.196069+00:00",
+      "synthetic": true
+    },
+    {
+      "id": "fan-068-golden-stage",
+      "index": 68,
+      "status": "completed",
+      "file": "generated/fan-images/fan-068-golden-stage.webp",
+      "prompt": "Create one photorealistic amateur smartphone photograph uploaded by a fan at a large fictional outdoor music festival in Golden Gate Park, San Francisco, during a foggy summer weekend in 2025.\n\nCompose it horizontally in a wide 3:2 phone-photo frame, using the extra width to show environmental context.\n\nMoment: a distant performer beginning a golden-hour set.\nViewpoint: slightly off-center audience view.\nTime: golden hour.\nVisual details: orange sunlight, cool fog, and teal stage accents.\nNatural action: the unidentifiable performer crosses the distant stage.\n\nThis belongs to one coherent fictional event shared by the whole collection. Preserve these recurring visual anchors: towering eucalyptus trees, cool San Francisco fog, one main stage built around three tall vertical LED towers, purple/amber/teal lighting, and orange cloth attendee wristbands. This is collection variation 3; make the people, exact framing, and incidental details distinct from other photos.\n\nMake it feel casually captured rather than professionally photographed: imperfect composition, ordinary phone-camera dynamic range, mild motion blur or digital noise where natural, subtle compression, occasional foreground obstruction, realistic crowd density, and layered clothes appropriate for a cold San Francisco evening. Do not make it cinematic, polished, staged, or symmetrical.\n\nAll people are fictional adults. Any performer must be distant, silhouetted, and unidentifiable. No real artist likenesses, logos, branded signage, readable text, copyrighted characters, press-photo styling, frames, collages, captions, or watermarks.",
+      "revised_prompt": null,
+      "model": "gpt-image-2",
+      "orientation": "landscape",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "webp",
+      "usage": {
+        "input_tokens": 311,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 311
+        },
+        "output_tokens": 1372,
+        "total_tokens": 1683,
+        "output_tokens_details": {
+          "image_tokens": 1372,
+          "text_tokens": 0
+        }
+      },
+      "generated_at": "2026-08-02T23:45:01.566855+00:00",
+      "synthetic": true
+    }
+  ]
+}

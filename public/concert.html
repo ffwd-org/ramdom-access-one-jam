@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RANDOM ACCESS ONE — Timeline POC (carousel)</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #06060a; overflow: hidden; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  canvas { display: block; }
+  :root { --panel: rgba(16,18,28,0.92); --line: #262c40; --txt: #e8ecf3; --dim: #7c8698; --accent: #8a9bff; }
+  #topbar {
+    position: fixed; top: 0; left: 0; right: 0; height: 52px; z-index: 20;
+    display: flex; align-items: center; gap: 18px; padding: 0 20px;
+    background: linear-gradient(#0a0c14ee, #0a0c1400);
+  }
+  #topbar .brand { font-size: 12px; letter-spacing: 3px; color: var(--txt); font-weight: 600; }
+  #topbar .spacer { flex: 1; }
+  .navbtn {
+    background: none; border: 1px solid var(--line); color: var(--txt);
+    font: 11px ui-monospace, Menlo, monospace; letter-spacing: 1px;
+    padding: 7px 14px; border-radius: 6px; cursor: pointer;
+  }
+  .navbtn:hover { border-color: var(--accent); color: var(--accent); }
+  #topbar .brand { text-decoration: none; }
+  #topbar .brand:hover { color: var(--accent); }
+  #topbar .where { font-size: 11px; color: var(--dim); letter-spacing: 2px; }
+
+  .panel {
+    position: fixed; top: 0; bottom: 0; width: 340px; z-index: 30;
+    background: var(--panel); backdrop-filter: blur(12px);
+    border-right: 1px solid var(--line);
+    transition: transform .35s cubic-bezier(.2,.9,.25,1);
+    display: flex; flex-direction: column; color: var(--txt);
+  }
+  #nav-panel { left: 0; transform: translateX(-105%); }
+  #nav-panel.open { transform: none; }
+  .navitem { display: flex; gap: 12px; padding: 14px 18px; cursor: pointer; border-bottom: 1px solid var(--line); }
+  .navitem:hover { background: #ffffff0a; }
+  .navitem .ico { color: var(--accent); font-size: 14px; width: 18px; text-align: center; }
+  .navitem .name { font-size: 12px; }
+  .navitem .sub { font-size: 10px; color: var(--dim); margin-top: 3px; line-height: 1.4; }
+  .navitem.active { background: #8a9bff14; border-left: 2px solid var(--accent); }
+  .panel-head { display: flex; align-items: center; justify-content: space-between; }
+  .closebtn {
+    background: none; border: none; color: var(--dim); cursor: pointer;
+    font: 13px ui-monospace, Menlo, monospace; padding: 2px 6px;
+  }
+  .closebtn:hover { color: var(--txt); }
+  #comments-panel { right: 0; border-right: none; border-left: 1px solid var(--line); transform: translateX(105%); }
+  #comments-panel.open { transform: none; }
+  #guestbook-panel { right: 0; border-right: none; border-left: 1px solid var(--line); transform: translateX(105%); }
+  #guestbook-panel.open { transform: none; }
+  .panel h2 {
+    font-size: 11px; letter-spacing: 2px; color: var(--dim); font-weight: 600;
+    padding: 18px 18px 12px; margin: 0; border-bottom: 1px solid var(--line);
+  }
+  .panel .scroll { overflow-y: auto; flex: 1; }
+  .post, .comment { display: flex; gap: 10px; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+  .avatar {
+    width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: #0a0c14;
+  }
+  .meta { font-size: 10px; color: var(--dim); margin-bottom: 3px; }
+  .meta b { color: var(--txt); font-weight: 600; }
+  .meta a { color: var(--txt); font-weight: 600; text-decoration: none; }
+  .meta a:hover { color: var(--accent); text-decoration: underline; }
+  .body { font-size: 11.5px; line-height: 1.45; }
+  #ctx-strip {
+    padding: 12px 18px; border-bottom: 1px solid var(--line);
+    font-size: 10.5px; color: var(--dim); line-height: 1.6;
+  }
+  #ctx-strip .cap { color: var(--txt); font-size: 11.5px; }
+  #ctx-strip .rank { color: var(--accent); letter-spacing: 1px; margin-top: 4px; }
+  #comment-input-row, #gb-input-row { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--line); }
+  #comment-input, #gb-input {
+    flex: 1; background: #0c0e18; border: 1px solid var(--line); border-radius: 6px;
+    color: var(--txt); font: 11.5px ui-monospace, Menlo, monospace; padding: 9px 10px; outline: none;
+  }
+  #comment-input:focus, #gb-input:focus { border-color: var(--accent); }
+  #moment-label {
+    position: fixed; left: 50%; bottom: 42px; transform: translateX(-50%);
+    color: #e8ecf3; font-size: 14px; letter-spacing: 1px; z-index: 10;
+    pointer-events: none; user-select: none; text-align: center;
+  }
+  #moment-label small { display:block; color:#7c8698; font-size: 10px; letter-spacing: 2px; margin-top: 4px;}
+  #your-toast {
+    position: fixed; top: 64px; left: 50%; transform: translateX(-50%);
+    z-index: 25; background: var(--panel); border: 1px solid var(--accent);
+    color: var(--txt); font-size: 11px; padding: 10px 18px; border-radius: 8px;
+    letter-spacing: 1px; opacity: 0; transition: opacity .5s; pointer-events: none;
+  }
+  #your-toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+<div id="topbar">
+  <button class="navbtn" id="nav-btn">☰</button>
+  <a class="brand" href="index.html">RANDOM ACCESS ONE</a>
+  <span class="where" id="concert-crumb">/ HOZIER — OUTSIDE LANDS 2025</span>
+  <div class="spacer"></div>
+  <button class="navbtn" id="gb-btn">✎ GUESTBOOK</button>
+</div>
+<div id="your-toast">✦ YOUR MOMENT IS ON THE TIMELINE — “Nina Cried Power”, right where you shot it</div>
+
+<div class="panel" id="nav-panel">
+  <h2 class="panel-head">BROWSE <button class="closebtn" id="nav-close">✕</button></h2>
+  <div class="navitem" id="nav-feed">
+    <span class="ico">⌂</span>
+    <div><div class="name">Home — Feed</div><div class="sub">posts from people you follow</div></div>
+  </div>
+  <div class="navitem" onclick="location.href='profile.html'">
+    <span class="ico">◉</span>
+    <div><div class="name">@moonkid</div><div class="sub">a profile you follow</div></div>
+  </div>
+  <div class="navitem" onclick="location.href='submit.html'">
+    <span class="ico">＋</span>
+    <div><div class="name">Add your moment</div><div class="sub">the page behind the venue QR code</div></div>
+  </div>
+  <h2>YOUR CONCERTS</h2>
+  <div class="scroll" id="nav-concerts"></div>
+</div>
+
+<div class="panel" id="comments-panel">
+  <h2 class="panel-head" id="comments-title">COMMENTS <button class="closebtn" id="comments-close">✕</button></h2>
+  <div id="ctx-strip"></div>
+  <div class="scroll" id="comments-list"></div>
+  <div id="comment-input-row">
+    <input id="comment-input" placeholder="Add a comment…" />
+  </div>
+</div>
+
+<div class="panel" id="guestbook-panel">
+  <h2 class="panel-head">GUESTBOOK — SIGN THE NIGHT <button class="closebtn" id="gb-close">✕</button></h2>
+  <div class="scroll" id="gb-list"></div>
+  <div id="gb-input-row">
+    <input id="gb-input" placeholder="Leave your impression of the night…" />
+  </div>
+</div>
+
+<div id="moment-label"><span id="ml-title"></span><small id="ml-sub"></small></div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { USERS, CONCERTS, MOMENTS, stripFor, commentsFor, GUESTBOOK, userOf, yourMoment } from './data.js';
+import { contentMesh, playInto, stopPlayback, setCardOpacity } from './media.js';
+
+const MOMENT_SPACING = 9;
+const SLOT_SPACING = 2.7;        // horizontal distance between carousel slots
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x06060a, 0.028);
+
+const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 0.1, 200);
+camera.position.set(0, 0, 6.2);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+document.body.appendChild(renderer.domElement);
+
+scene.add(new THREE.AmbientLight(0x8899bb, 0.6));
+const key = new THREE.DirectionalLight(0xffffff, 1.2);
+key.position.set(4, 6, 8);
+scene.add(key);
+const rim = new THREE.PointLight(0x6a5cff, 30, 40);
+rim.position.set(-6, 2, -4);
+scene.add(rim);
+
+// starfield backdrop
+{
+  const g = new THREE.BufferGeometry();
+  const n = 600, pos = new Float32Array(n*3);
+  for (let i=0;i<n;i++){
+    pos[i*3]   = (Math.random()-0.5)*120;
+    pos[i*3+1] = (Math.random()-0.5)*160 - 20;
+    pos[i*3+2] = -20 - Math.random()*60;
+  }
+  g.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  scene.add(new THREE.Points(g, new THREE.PointsMaterial({color:0x39415a, size:0.18})));
+}
+
+// spine line + node dots (one extra slot at the end for "add your moment")
+{
+  const totalH = MOMENTS.length * MOMENT_SPACING;
+  const spine = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.025, 0.025, totalH + 8, 8),
+    new THREE.MeshBasicMaterial({ color: 0x7a8ac8, transparent: true, opacity: 0.85 }));
+  spine.position.set(0, -totalH / 2, -1.6);
+  scene.add(spine);
+  MOMENTS.forEach((_, i) => {
+    const dot = new THREE.Mesh(
+      new THREE.SphereGeometry(0.09, 12, 12),
+      new THREE.MeshBasicMaterial({ color: 0xaab8ff }));
+    dot.position.set(0, -i * MOMENT_SPACING, -1.6);
+    scene.add(dot);
+  });
+  const end = new THREE.Mesh(
+    new THREE.SphereGeometry(0.09, 12, 12),
+    new THREE.MeshBasicMaterial({ color: 0x8a9bff, transparent: true, opacity: 0.6 }));
+  end.position.set(0, -MOMENTS.length * MOMENT_SPACING, -1.6);
+  scene.add(end);
+}
+
+// Each moment = a carousel strip built from the shared dataset:
+// master at the center, contributions proximity-ordered by score.
+const carousels = [];   // { group, items:[{mesh, contrib, isMaster, phase, amp, rotAmp, speed}], pos, targetPos }
+const yours = yourMoment();
+
+MOMENTS.forEach((m, mi) => {
+  const group = new THREE.Group();
+  group.position.y = -mi * MOMENT_SPACING;
+  scene.add(group);
+
+  // halo circle behind the center slot
+  const halo = new THREE.Mesh(
+    new THREE.RingGeometry(2.55, 2.62, 64),
+    new THREE.MeshBasicMaterial({ color: 0x4a5580, side: THREE.DoubleSide, transparent: true, opacity: 0.5 }));
+  halo.position.z = -1.0;
+  group.add(halo);
+
+  const strip = stripFor(m.id);
+  // your fresh submission slides in right next to the master of its moment
+  if (yours && yours.momentId === m.id) strip.items.splice(strip.masterIndex + 1, 0, yours);
+
+  const items = strip.items.map(contrib => {
+    const mesh = contentMesh(contrib);
+    group.add(mesh);
+    return {
+      mesh, contrib,
+      isMaster: contrib.type === 'master',
+      phase: Math.random()*Math.PI*2,
+      amp: 0.05 + Math.random()*0.06,
+      rotAmp: 0.04 + Math.random()*0.06,
+      speed: 0.4 + Math.random()*0.5,
+    };
+  });
+
+  carousels.push({ group, items, pos: strip.masterIndex, targetPos: strip.masterIndex });
+});
+
+// final slot: a dotted "add your moment" card that leads to submit.html.
+// (in the real thing, the system aligns your clip with the master video)
+{
+  const W = 256, H = 434, cv = document.createElement('canvas');
+  cv.width = W; cv.height = H;
+  const ctx = cv.getContext('2d');
+  ctx.fillStyle = 'rgba(16,18,28,0.75)';
+  ctx.fillRect(0, 0, W, H);
+  ctx.strokeStyle = '#8a9bff';
+  ctx.lineWidth = 3;
+  ctx.setLineDash([12, 9]);
+  ctx.strokeRect(8, 8, W - 16, H - 16);
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#8a9bff';
+  ctx.textAlign = 'center';
+  ctx.font = '64px ui-monospace, Menlo, monospace';
+  ctx.fillText('＋', W / 2, H / 2 - 40);
+  ctx.font = '600 20px ui-monospace, Menlo, monospace';
+  ctx.fillStyle = '#e8ecf3';
+  ctx.fillText('ADD YOUR', W / 2, H / 2 + 24);
+  ctx.fillText('MOMENT', W / 2, H / 2 + 52);
+  ctx.font = '13px ui-monospace, Menlo, monospace';
+  ctx.fillStyle = '#7c8698';
+  ctx.fillText('your clip syncs to', W / 2, H / 2 + 96);
+  ctx.fillText('the master video', W / 2, H / 2 + 116);
+  const tex = new THREE.CanvasTexture(cv);
+  const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true });
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(1.15, 1.95), mat);
+  mesh.userData.allMats = [mat];
+  const group = new THREE.Group();
+  group.position.y = -MOMENTS.length * MOMENT_SPACING;
+  group.add(mesh);
+  scene.add(group);
+  const item = {
+    mesh, isAdd: true, isMaster: false,
+    phase: Math.random()*Math.PI*2, amp: 0.06, rotAmp: 0.05, speed: 0.5,
+  };
+  carousels.push({ group, items: [item], pos: 0, targetPos: 0, isAdd: true });
+}
+
+// --- navigation state ---
+let targetMoment = 0;
+let scrollPos = 0;
+
+// arriving from submit.html: jump to your moment and celebrate briefly
+if (yours) {
+  targetMoment = MOMENTS.findIndex(m => m.id === yours.momentId);
+  const c = carousels[targetMoment];
+  const yi = c.items.findIndex(it => it.contrib.yours);
+  c.pos = c.targetPos = yi;
+  scrollPos = targetMoment;
+  const toast = document.getElementById('your-toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 5000);
+}
+
+const mlTitle = document.getElementById('ml-title');
+const mlSub = document.getElementById('ml-sub');
+function updateLabel(){
+  const m = MOMENTS[targetMoment];
+  if (!m) {
+    mlTitle.textContent = 'Add your moment';
+    mlSub.textContent = 'CLICK THE CARD — IT SYNCS TO THE MASTER VIDEO';
+    return;
+  }
+  mlTitle.textContent = m.title;
+  mlSub.textContent = `MOMENT ${targetMoment+1}/${MOMENTS.length} · ${m.t}`;
+}
+updateLabel();
+
+function rotateCarousel(delta) {
+  collapse();
+  const c = carousels[targetMoment];
+  c.targetPos = THREE.MathUtils.clamp(Math.round(c.targetPos + delta), 0, c.items.length - 1);
+}
+
+let wheelAccum = 0, wheelLock = false;
+addEventListener('wheel', e => {
+  if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+    if (Math.abs(e.deltaX) > 12) rotateCarousel(Math.sign(e.deltaX));
+    return;
+  }
+  if (wheelLock) return;
+  wheelAccum += e.deltaY;
+  if (Math.abs(wheelAccum) > 60) {
+    collapse();
+    targetMoment = THREE.MathUtils.clamp(targetMoment + Math.sign(wheelAccum), 0, carousels.length-1);
+    updateLabel();
+    wheelAccum = 0;
+    wheelLock = true;
+    setTimeout(()=> wheelLock = false, 450);
+  }
+}, { passive: true });
+
+addEventListener('keydown', e => {
+  if (e.key === 'Escape') collapse();
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    collapse();
+    targetMoment = THREE.MathUtils.clamp(targetMoment + (e.key==='ArrowDown'?1:-1), 0, carousels.length-1);
+    updateLabel();
+  }
+  if (e.key === 'ArrowRight') rotateCarousel(1);
+  if (e.key === 'ArrowLeft')  rotateCarousel(-1);
+});
+
+// parallax + hover
+let mx = 0, my = 0;
+const pointer = new THREE.Vector2();
+const raycaster = new THREE.Raycaster();
+let hoverCandidate = null, hoverSince = 0;
+let expandedItem = null;   // the item currently blown up near-fullscreen
+
+function collapse() {
+  if (expandedItem) stopPlayback(expandedItem.mesh);
+  expandedItem = null;
+  previewItem = null;   // let the center-slot preview restart (muted)
+  commentsPanel.classList.remove('open');
+}
+
+addEventListener('click', (e) => {
+  if (e.target !== renderer.domElement) return;   // clicks on HTML UI don't reach the 3D scene
+  navPanel.classList.remove('open');              // clicking the scene dismisses the nav
+  guestbookPanel.classList.remove('open');
+  const c = carousels[targetMoment];
+  if (Math.abs(targetMoment - scrollPos) > 0.08) return;   // mid vertical scroll
+  raycaster.setFromCamera(pointer, camera);
+  const hits = raycaster.intersectObjects(c.items.map(it => it.mesh));
+  if (!hits.length) { collapse(); return; }
+  const idx = c.items.findIndex(it => it.mesh === hits[0].object);
+  const item = c.items[idx];
+  if (item.isAdd) { location.href = 'submit.html'; return; }
+  if (expandedItem === item) { collapse(); return; }        // toggle off
+  if (Math.abs(idx - c.pos) < 0.5) {                        // center item → expand
+    collapse();
+    expandedItem = item;
+    playInto(item.mesh);                                    // theater: video with sound
+    openComments(item, idx);
+  }
+  else { collapse(); c.targetPos = idx; }                   // side item → rotate in
+});
+
+addEventListener('mousemove', e => {
+  mx = (e.clientX/innerWidth - 0.5);
+  my = (e.clientY/innerHeight - 0.5);
+  pointer.set((e.clientX/innerWidth)*2 - 1, -(e.clientY/innerHeight)*2 + 1);
+});
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+// ---------- social layer (shared mock data) ----------
+const navPanel = document.getElementById('nav-panel');
+const commentsPanel = document.getElementById('comments-panel');
+const guestbookPanel = document.getElementById('guestbook-panel');
+const concertCrumb = document.getElementById('concert-crumb');
+
+const avatarEl = u => `<div class="avatar" style="background:${u.color}">${u.ini}</div>`;
+
+let currentConcert = 0;
+function switchConcert(i) {
+  currentConcert = i;
+  concertCrumb.textContent = `/ ${CONCERTS[i].name.toUpperCase()}`;
+  renderNavConcerts();
+  collapse();
+  targetMoment = 0;
+  updateLabel();
+}
+
+// left nav
+document.getElementById('nav-btn').addEventListener('click', () => {
+  navPanel.classList.toggle('open');
+});
+document.getElementById('nav-close').addEventListener('click', () => navPanel.classList.remove('open'));
+document.getElementById('nav-feed').addEventListener('click', () => {
+  location.href = 'index.html';
+});
+function renderNavConcerts() {
+  document.getElementById('nav-concerts').innerHTML = CONCERTS.map((c, i) =>
+    `<div class="navitem ${i === currentConcert ? 'active' : ''}" data-i="${i}">
+      <span class="ico">♪</span>
+      <div><div class="name">${c.name}</div><div class="sub">${c.sub}</div></div>
+    </div>`).join('');
+}
+renderNavConcerts();
+document.getElementById('nav-concerts').addEventListener('click', e => {
+  const el = e.target.closest('.navitem');
+  if (el) switchConcert(+el.dataset.i);
+});
+
+// comments: shared threads from data.js, deterministic across pages/reloads
+function commentHTML({ user, txt, when }) {
+  return `<div class="comment">${avatarEl(user)}
+    <div><div class="meta"><a href="profile.html">@${user.handle}</a> · ${when}</div>
+    <div class="body">${txt}</div></div></div>`;
+}
+function openComments(item, idx) {
+  const contrib = item.contrib;
+  if (!item.comments) item.comments = contrib.yours ? [] : commentsFor(contrib).map(commentHTML);
+  const u = userOf(contrib);
+  document.getElementById('comments-title').innerHTML =
+    (item.isMaster ? 'MASTER FEED' : `@${u.handle.toUpperCase()}`) +
+    ` · ${MOMENTS[targetMoment].title} <button class="closebtn" id="comments-close">✕</button>`;
+  document.getElementById('comments-close').addEventListener('click', collapse);
+  const c = carousels[targetMoment];
+  const rank = Math.abs(idx - Math.round(c.items.findIndex(i2 => i2.isMaster)));
+  document.getElementById('ctx-strip').innerHTML =
+    `<div class="cap">“${contrib.caption}”</div>
+     <div class="rank">${item.isMaster ? '◉ OFFICIAL MASTER — DEFINES THIS MOMENT'
+       : `▲ ${contrib.score} · POSITION ${rank} FROM CENTER — earned, same for everyone`}</div>`;
+  document.getElementById('comments-list').innerHTML =
+    item.comments.length ? item.comments.join('')
+    : `<div class="comment"><div class="body" style="color:var(--dim)">No comments yet — yours is fresh on the timeline. They'll come.</div></div>`;
+  commentsPanel.classList.add('open');
+}
+const commentInput = document.getElementById('comment-input');
+commentInput.addEventListener('keydown', e => {
+  e.stopPropagation();   // typing arrows/Esc shouldn't drive the 3D scene
+  if (e.key === 'Enter' && commentInput.value.trim() && expandedItem) {
+    expandedItem.comments.push(commentHTML({ user: USERS.you, txt: commentInput.value.trim(), when: 'now' }));
+    const list = document.getElementById('comments-list');
+    list.innerHTML = expandedItem.comments.join('');
+    list.scrollTop = list.scrollHeight;
+    commentInput.value = '';
+  }
+});
+
+// guestbook: sign the night, media optional (demo scope item 7)
+const gbList = document.getElementById('gb-list');
+const gbEntries = GUESTBOOK.map(g => commentHTML({ user: USERS[g.userId], txt: g.txt, when: g.when }));
+function renderGuestbook(){ gbList.innerHTML = gbEntries.join(''); }
+renderGuestbook();
+document.getElementById('gb-btn').addEventListener('click', () => {
+  collapse(); navPanel.classList.remove('open');
+  guestbookPanel.classList.toggle('open');
+});
+document.getElementById('gb-close').addEventListener('click', () => guestbookPanel.classList.remove('open'));
+const gbInput = document.getElementById('gb-input');
+gbInput.addEventListener('keydown', e => {
+  e.stopPropagation();
+  if (e.key === 'Enter' && gbInput.value.trim()) {
+    gbEntries.unshift(commentHTML({ user: USERS.you, txt: gbInput.value.trim(), when: 'now' }));
+    renderGuestbook();
+    gbList.scrollTop = 0;
+    gbInput.value = '';
+  }
+});
+
+// inline preview: whatever video card is settled in the center slot plays
+// muted; leaves the slot → back to its thumbnail. Theater mode takes over
+// the same video with sound.
+let previewItem = null;
+function updatePreview() {
+  const c = carousels[targetMoment];
+  const settled = Math.abs(targetMoment - scrollPos) < 0.08 && Math.abs(c.targetPos - c.pos) < 0.15;
+  const center = settled && !expandedItem ? c.items[Math.round(c.pos)] : null;
+  const item = center ?? (expandedItem === previewItem ? previewItem : null);
+  if (item === previewItem) return;
+  if (previewItem && previewItem !== expandedItem && !previewItem.isAdd) stopPlayback(previewItem.mesh);
+  previewItem = item;
+  if (item && !item.isAdd) playInto(item.mesh, { muted: true });
+}
+
+const clock = new THREE.Clock();
+let par = 1;
+function tick(){
+  requestAnimationFrame(tick);
+  const t = clock.getElapsedTime();
+
+  scrollPos += (targetMoment - scrollPos) * 0.07;
+  updatePreview();
+  par += ((expandedItem ? 0.06 : 1) - par) * 0.08;  // parallax fades out in theater mode
+  camera.position.y = -scrollPos * MOMENT_SPACING + my * -0.6 * par;
+  camera.position.x = mx * 0.8 * par;
+  camera.lookAt(0, -scrollPos * MOMENT_SPACING, 0);
+
+  // hover: rotate the carousel so the hovered card comes to the center.
+  // dwell 250ms; suppressed while scrolling vertically or mid-rotation.
+  {
+    const c = carousels[targetMoment];
+    const settledV = Math.abs(targetMoment - scrollPos) < 0.08;
+    const settledH = Math.abs(c.targetPos - c.pos) < 0.15;
+    let candidate = null;
+    if (settledV && settledH && !expandedItem) {
+      raycaster.setFromCamera(pointer, camera);
+      const hits = raycaster.intersectObjects(c.items.map(it => it.mesh));
+      if (hits.length) candidate = c.items.findIndex(it => it.mesh === hits[0].object);
+      if (candidate === -1) candidate = null;
+    }
+    if (candidate !== hoverCandidate) { hoverCandidate = candidate; hoverSince = t; }
+    if (candidate !== null && t - hoverSince > 0.25) c.targetPos = candidate;
+    document.body.style.cursor = candidate !== null ? 'pointer' : 'default';
+  }
+
+  // carousel layout: every item slides horizontally as pos eases — the whole
+  // strip rotates, center item biggest, sizes falling off to the sides
+  for (const c of carousels) {
+    c.pos += (c.targetPos - c.pos) * 0.09;
+    c.items.forEach((it, i) => {
+      const setOpacity = (v) => setCardOpacity(it.mesh, v);
+      if (it === expandedItem) {
+        // theater mode: fill the viewport area NOT covered by the side panels,
+        // as if the viewport were that smaller rectangle
+        const dist = camera.position.z - 3.4 - 0.25;               // measured to the box's front face
+        const viewH = 2 * dist * Math.tan(THREE.MathUtils.degToRad(camera.fov/2));
+        const viewW = viewH * camera.aspect;
+        const pxToWorld = viewW / innerWidth;
+        const PANEL_W = 340, PAD = 40, TOP = 60, BOTTOM = 90;
+        const navW = navPanel.classList.contains('open') ? PANEL_W : 0;
+        const availWpx = innerWidth - navW - PANEL_W - PAD * 2;    // comments panel is open in this state
+        const availHpx = innerHeight - TOP - BOTTOM;
+        const maxW = availWpx * pxToWorld;
+        const maxH = availHpx * (viewH / innerHeight);
+        // center of the available strip, in world units
+        const cx = (navW + (innerWidth - navW - PANEL_W) / 2 - innerWidth / 2) * pxToWorld;
+        const { width: geoW, height: geoH } = it.mesh.geometry.parameters;
+        it.mesh.position.lerp(new THREE.Vector3(cx, 0, 3.4), 0.14);
+        const target = Math.min(maxH / geoH, maxW / geoW);
+        it.mesh.scale.setScalar(THREE.MathUtils.lerp(it.mesh.scale.x, target, 0.14));
+        it.mesh.rotation.set(0, 0, 0);
+        setOpacity(1);
+        return;
+      }
+      const d = i - c.pos;                       // signed slot offset from center
+      const ad = Math.abs(d);
+      const dim = (expandedItem && c === carousels[targetMoment]) ? 0.15 : 1;
+      // slight compression far from center so the strip doesn't stretch forever
+      const x = Math.sign(d) * SLOT_SPACING * (ad < 1 ? ad : 1 + (ad - 1) * 0.82);
+      const scale = (it.isMaster ? 1 : 0.9) * (1.35 / (1 + 0.3 * ad));
+      const z = -0.25 * ad * ad * 0.35 - (ad > 0.5 ? 0.3 : 0);
+      const s = it.speed, p = it.phase;
+      it.mesh.position.set(
+        x + Math.sin(t*s + p) * it.amp,
+        Math.sin(t*s*0.8 + p*1.7) * it.amp * 1.4,
+        z + Math.cos(t*s*0.6 + p) * it.amp * 0.5);
+      it.mesh.scale.setScalar(scale);
+      it.mesh.rotation.z = Math.sin(t*s*0.5 + p) * it.rotAmp * Math.min(ad, 1);
+      it.mesh.rotation.y = Math.cos(t*s*0.4 + p) * it.rotAmp * Math.min(ad, 1) - d * 0.14; // subtle ring turn
+      setOpacity((it.isMaster ? 1 : Math.max(0.18, 1 - ad * 0.16)) * dim);
+    });
+  }
+
+  // de-emphasize non-active moments
+  carousels.forEach((c, i) => {
+    const d = Math.abs(i - scrollPos);
+    c.group.scale.setScalar(THREE.MathUtils.lerp(1, 0.85, Math.min(d, 1)));
+  });
+
+  renderer.render(scene, camera);
+}
+tick();
+</script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RANDOM ACCESS ONE — The night doesn't have to end</title>
+<style>
+  :root {
+    --bg: #06060a;
+    --panel: #0d0f18;
+    --line: #262c40;
+    --txt: #e8ecf3;
+    --dim: #7c8698;
+    --accent: #8a9bff;
+    --accent-soft: #8a9bff1a;
+    --pink: #ff5c8a;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--txt);
+    font-family: var(--sans); line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent); color: #06060a; }
+
+  /* ---------- nav ---------- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px 28px;
+    background: linear-gradient(#06060aee, #06060a00);
+  }
+  .brand { font-family: var(--mono); font-size: 12px; letter-spacing: 3px; font-weight: 600; }
+  .brand em { color: var(--accent); font-style: normal; }
+  nav .spacer { flex: 1; }
+  .casetag {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+    color: var(--dim); border: 1px solid var(--line);
+    padding: 5px 10px; border-radius: 99px;
+  }
+  .navlink {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 1px;
+    color: var(--txt); text-decoration: none;
+    border: 1px solid var(--accent); padding: 7px 16px; border-radius: 6px;
+    transition: background .2s;
+  }
+  .navlink:hover { background: var(--accent-soft); }
+
+  /* ---------- layout ---------- */
+  section { max-width: 960px; margin: 0 auto; padding: 110px 28px 40px; }
+  .kicker {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 3px;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .kicker::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  h1, h2, h3 { font-weight: 700; line-height: 1.15; margin: 0; }
+  h2 { font-size: clamp(28px, 4.5vw, 42px); letter-spacing: -0.5px; margin-bottom: 20px; }
+  h2 .hl { color: var(--accent); }
+  p.lede { font-size: 17px; color: var(--dim); max-width: 640px; }
+
+  /* ---------- hero ---------- */
+  header {
+    min-height: 92vh; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center;
+    padding: 120px 24px 60px; position: relative; overflow: hidden;
+  }
+  header::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 45% at 50% 110%, #8a9bff22, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 80% -10%, #ff5c8a14, transparent 70%);
+  }
+  .hero-eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 4px;
+    color: var(--dim); margin-bottom: 26px;
+  }
+  h1 {
+    font-size: clamp(38px, 7vw, 74px); letter-spacing: -1.5px;
+    max-width: 900px;
+  }
+  h1 .strike {
+    color: var(--dim); text-decoration: line-through;
+    text-decoration-color: var(--pink); text-decoration-thickness: 3px;
+  }
+  h1 .glow {
+    background: linear-gradient(100deg, var(--accent), #c8b6ff 60%, var(--pink));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero-sub {
+    margin-top: 26px; font-size: 17px; color: var(--dim); max-width: 560px;
+  }
+  .hero-cta { margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .btn {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 1.5px;
+    text-decoration: none; padding: 14px 26px; border-radius: 8px;
+    transition: transform .15s, background .2s, border-color .2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--accent); color: #06060a; font-weight: 700; }
+  .btn-ghost { border: 1px solid var(--line); color: var(--txt); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* timeline motif under hero */
+  .hero-timeline {
+    margin-top: 70px; display: flex; align-items: center; gap: 0;
+    width: min(640px, 90%);
+  }
+  .hero-timeline .seg { flex: 1; height: 1px; background: var(--line); }
+  .hero-timeline .dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    border: 2px solid var(--dim); background: var(--bg); flex: none;
+  }
+  .hero-timeline .dot.lit { border-color: var(--accent); background: var(--accent); box-shadow: 0 0 14px var(--accent); }
+  .hero-timeline-label {
+    margin-top: 14px; font-family: var(--mono); font-size: 10px;
+    letter-spacing: 2px; color: var(--dim);
+  }
+
+  /* ---------- problem cards ---------- */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 48px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 14px; padding: 28px 24px;
+  }
+  .card .num { font-family: var(--mono); font-size: 11px; color: var(--pink); letter-spacing: 2px; }
+  .card h3 { font-size: 18px; margin: 12px 0 10px; }
+  .card p { font-size: 14px; color: var(--dim); margin: 0; }
+  .punch {
+    margin-top: 48px; padding: 26px 30px; border-left: 3px solid var(--accent);
+    background: var(--accent-soft); border-radius: 0 12px 12px 0;
+    font-size: 18px; font-weight: 600; max-width: 720px;
+  }
+
+  /* ---------- insight quote ---------- */
+  .quote-block { text-align: center; padding: 40px 0 10px; }
+  .quote-block blockquote {
+    font-size: clamp(22px, 3.4vw, 32px); font-weight: 600; line-height: 1.4;
+    max-width: 760px; margin: 0 auto; letter-spacing: -0.5px;
+  }
+  .quote-block blockquote span { color: var(--accent); }
+  .quote-block cite {
+    display: block; margin-top: 22px; font-family: var(--mono);
+    font-size: 11px; letter-spacing: 2px; color: var(--dim); font-style: normal;
+  }
+
+  /* ---------- steps ---------- */
+  .steps { margin-top: 48px; display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: grid; grid-template-columns: 64px 1fr; gap: 24px;
+    padding: 28px 0; border-top: 1px solid var(--line);
+  }
+  .step:last-child { border-bottom: 1px solid var(--line); }
+  .step .idx {
+    font-family: var(--mono); font-size: 13px; color: var(--accent);
+    width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step h3 { font-size: 19px; margin-bottom: 8px; }
+  .step p { margin: 0; font-size: 15px; color: var(--dim); max-width: 640px; }
+  .step p em { color: var(--txt); font-style: normal; font-weight: 600; }
+
+  /* ---------- principles ---------- */
+  .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 44px; }
+  .principle {
+    border: 1px solid var(--line); border-radius: 12px; padding: 22px 20px;
+    transition: border-color .2s;
+  }
+  .principle:hover { border-color: var(--accent); }
+  .principle h3 { font-size: 15px; margin-bottom: 8px; color: var(--accent); font-family: var(--mono); letter-spacing: 1px; font-weight: 600; }
+  .principle p { margin: 0; font-size: 13.5px; color: var(--dim); }
+
+  /* ---------- prototype ---------- */
+  .proto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 44px; }
+  .proto {
+    display: block; text-decoration: none; color: var(--txt);
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 12px; padding: 24px 20px; transition: border-color .2s, transform .15s;
+  }
+  .proto:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .proto .tag { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; color: var(--accent); }
+  .proto h3 { font-size: 16px; margin: 10px 0 8px; }
+  .proto p { margin: 0; font-size: 13px; color: var(--dim); }
+
+  /* ---------- footer ---------- */
+  footer {
+    margin-top: 120px; border-top: 1px solid var(--line);
+    padding: 48px 28px; text-align: center;
+  }
+  footer .mark { font-family: var(--mono); font-size: 12px; letter-spacing: 3px; }
+  footer .tagline { margin-top: 12px; font-size: 13px; color: var(--dim); font-style: italic; }
+  footer .meta { margin-top: 24px; font-family: var(--mono); font-size: 10px; letter-spacing: 2px; color: #4a5265; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">RANDOM ACCESS <em>ONE</em></div>
+  <div class="spacer"></div>
+  <div class="casetag">UX CASE STUDY</div>
+  <a class="navlink" href="concert.html">VIEW PROTOTYPE →</a>
+</nav>
+
+<header>
+  <div class="hero-eyebrow">A SOCIAL SPACE FOR ONE SPECIFIC NIGHT</div>
+  <h1>
+    Live events <span class="strike">end</span>.<br/>
+    The connections they create <span class="glow">shouldn't.</span>
+  </h1>
+  <p class="hero-sub">
+    Thousands of people share one night — then the internet scatters them.
+    RANDOM ACCESS ONE keeps the night alive, and only the people who were
+    there can enter.
+  </p>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="concert.html">EXPLORE THE NIGHT</a>
+    <a class="btn btn-ghost" href="#problem">READ THE CASE</a>
+  </div>
+  <div class="hero-timeline" aria-hidden="true">
+    <div class="dot lit"></div><div class="seg"></div>
+    <div class="dot lit"></div><div class="seg"></div>
+    <div class="dot lit"></div><div class="seg"></div>
+    <div class="dot"></div><div class="seg"></div>
+    <div class="dot"></div><div class="seg"></div>
+    <div class="dot"></div><div class="seg"></div>
+    <div class="dot"></div>
+  </div>
+  <div class="hero-timeline-label">THE NIGHT, AS A TIMELINE — 7 MOMENTS, EVERY ANGLE</div>
+</header>
+
+<!-- 01 PROBLEM -->
+<section id="problem">
+  <div class="kicker">01 — The Problem</div>
+  <h2>A concert brings thousands of people together.<br/>Then it just <span class="hl">ends</span>.</h2>
+  <p class="lede">
+    You stand shoulder to shoulder with strangers, sing the same words, share
+    the same drop — and then the lights come up. By Monday, three things have
+    quietly died:
+  </p>
+  <div class="cards">
+    <div class="card">
+      <div class="num">LOSS · 1</div>
+      <h3>Your clips die scattered</h3>
+      <p>The videos fans filmed get posted to social media, stripped of all
+      context, and buried by the algorithm within hours. The night becomes
+      noise.</p>
+    </div>
+    <div class="card">
+      <div class="num">LOSS · 2</div>
+      <h3>People become strangers again</h3>
+      <p>The person who screamed next to you at minute 47 — who shared the best
+      moment of your month — is someone you will never find again.</p>
+    </div>
+    <div class="card">
+      <div class="num">LOSS · 3</div>
+      <h3>Official footage goes unwatched</h3>
+      <p>Organizers record the whole show professionally. Those hours of video
+      sit on a hard drive forever, seen by no one.</p>
+    </div>
+  </div>
+  <div class="punch">
+    The event ends — but the relationships it could have created never even start.
+  </div>
+</section>
+
+<!-- 02 INSIGHT -->
+<section>
+  <div class="kicker">02 — The Insight</div>
+  <div class="quote-block">
+    <blockquote>
+      Shared experience is the best icebreaker.<br/>
+      <span>We just give it a room.</span>
+    </blockquote>
+    <cite>DESIGN PRINCIPLE — RANDOM ACCESS ONE</cite>
+  </div>
+  <p class="lede" style="margin: 40px auto 0; text-align: center;">
+    People don't come back for the archive. They come back to relive the
+    night — and they stay because of who they met there.
+    <strong style="color: var(--txt);">Nostalgia is the hook; friendship is the goal.</strong>
+  </p>
+</section>
+
+<!-- 03 SOLUTION -->
+<section>
+  <div class="kicker">03 — The Solution</div>
+  <h2>A community per night.<br/><span class="hl">You had to be there.</span></h2>
+  <p class="lede">
+    Structurally it works like Reddit: the platform hosts many communities, but
+    each one is a single event, created by the organizer. Inside, the night is
+    rebuilt as a timeline — and the crowd fills it with every angle of itself.
+  </p>
+  <div class="steps">
+    <div class="step">
+      <div class="idx">1</div>
+      <div>
+        <h3>The timeline is the feed</h3>
+        <p>The organizer uploads the official footage they recorded anyway. The
+        night is arranged into <em>Moments</em> — the songs, the speeches, the
+        drop — scrubbable and in order. You don't post into an endless feed;
+        you post <em>at minute 47, when the drop hit</em>.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="idx">2</div>
+      <div>
+        <h3>Fans add their moments</h3>
+        <p>Attendees upload their own photos and videos, and each one lands at
+        its true moment in the show. The result is the night seen from
+        everywhere at once — the soundboard, the pit, the rail, and
+        <em>your spot in the crowd</em>, pinned where it belongs.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="idx">3</div>
+      <div>
+        <h3>Presence is the price of admission</h3>
+        <p>You can only join if you were actually there —
+        <em>your video is your ticket stub</em>. Everyone inside shared the same
+        night, so the community never starts cold and never fills with
+        tourists. Consent is captured per clip, at upload. Nothing is ever
+        scraped.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="idx">4</div>
+      <div>
+        <h3>Conversation grows around moments</h3>
+        <p>"Wasn't that song insane?" — anchored to the exact moment it
+        happened, with everyone's angles clustered right there. Didn't film
+        anything? Pin a text memory instead:
+        <em>"this is where I lost my voice."</em> Filming is rewarded; presence
+        is never punished.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="idx">5</div>
+      <div>
+        <h3>Relationships outlive the event</h3>
+        <p>You meet someone in the comments who was standing ten meters away.
+        You follow them. You see the next shows they're attending.
+        <em>You went in with a ticket and came out with a friend</em> who loves
+        the same music you do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PRINCIPLES -->
+<section>
+  <div class="kicker">04 — Design Principles</div>
+  <h2>Five rules the product <span class="hl">never breaks</span>.</h2>
+  <div class="principles">
+    <div class="principle">
+      <h3>THE EVENT IS THE COMMUNITY</h3>
+      <p>Not a global feed — a room per night.</p>
+    </div>
+    <div class="principle">
+      <h3>YOU HAD TO BE THERE</h3>
+      <p>Presence-gated, always. No tourists.</p>
+    </div>
+    <div class="principle">
+      <h3>CONSENT-FIRST</h3>
+      <p>Every clip uploaded by its owner, with explicit permission. Never scraped.</p>
+    </div>
+    <div class="principle">
+      <h3>THE TIMELINE IS THE TRUTH</h3>
+      <p>Content lives at the moment it happened.</p>
+    </div>
+    <div class="principle">
+      <h3>NOSTALGIA IS THE HOOK</h3>
+      <p>Friendship is the goal. People return to relive; they stay for who they met.</p>
+    </div>
+    <div class="principle">
+      <h3>ONE SHARED NIGHT</h3>
+      <p>No personalized algorithm — the community collectively decides what sits closest to each moment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 PROTOTYPE -->
+<section>
+  <div class="kicker">05 — The Prototype</div>
+  <h2>Click through the <span class="hl">morning after</span>.</h2>
+  <p class="lede">
+    The demo tells one story: Hozier at Outside Lands 2025, the day after —
+    7 moments, 40+ fan contributions, one community that refuses to let the
+    night end.
+  </p>
+  <div class="proto-grid">
+    <a class="proto" href="concert.html">
+      <div class="tag">CORE EXPERIENCE</div>
+      <h3>The Event Timeline</h3>
+      <p>Scroll vertically through the night's moments; horizontally through every fan angle of each one.</p>
+    </a>
+    <a class="proto" href="submit.html">
+      <div class="tag">ONBOARDING</div>
+      <h3>Upload Your Clip</h3>
+      <p>QR entry → one-tap consent → presence check → your video pinned to its moment.</p>
+    </a>
+    <a class="proto" href="index.html">
+      <div class="tag">DISCOVERY</div>
+      <h3>The Feed</h3>
+      <p>A familiar stream that always leads back into a specific night.</p>
+    </a>
+    <a class="proto" href="profile.html">
+      <div class="tag">RETENTION</div>
+      <h3>Fan Profile</h3>
+      <p>Where a connection made at minute 47 survives past the event.</p>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="mark">RANDOM ACCESS ONE</div>
+  <div class="tagline">"La música nos une — we just keep the receipts."</div>
+  <div class="meta">UX CASE STUDY · POC-TIMELINE · DEMO BUILD — VALIDATION &amp; PLACEMENT ARE SIMULATED</div>
+</footer>
+
+</body>
+</html>

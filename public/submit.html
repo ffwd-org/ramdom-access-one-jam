@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RANDOM ACCESS ONE — Add your moment</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #06060a; overflow: hidden; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  canvas { display: block; position: fixed; inset: 0; }
+  :root { --panel: rgba(16,18,28,0.94); --line: #262c40; --txt: #e8ecf3; --dim: #7c8698; --accent: #8a9bff; }
+
+  #card {
+    position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: min(400px, calc(100vw - 48px)); z-index: 10;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    backdrop-filter: blur(14px); color: var(--txt); padding: 30px 28px;
+    box-sizing: border-box; text-align: center;
+  }
+  .brand { font-size: 11px; letter-spacing: 3px; color: var(--dim); }
+
+  #topbar {
+    position: fixed; top: 0; left: 0; right: 0; height: 52px; z-index: 20;
+    display: flex; align-items: center; gap: 18px; padding: 0 20px;
+    background: linear-gradient(#0a0c14ee, #0a0c1400);
+  }
+  #topbar .brand { font-size: 12px; color: var(--txt); font-weight: 600; text-decoration: none; }
+  #topbar .brand:hover { color: var(--accent); }
+  #topbar .where { font-size: 11px; color: var(--dim); letter-spacing: 2px; }
+  #topbar .spacer { flex: 1; }
+  .navbtn {
+    background: none; border: 1px solid var(--line); color: var(--txt);
+    font: 11px ui-monospace, Menlo, monospace; letter-spacing: 1px;
+    padding: 7px 14px; border-radius: 6px; cursor: pointer; text-decoration: none;
+  }
+  .navbtn:hover { border-color: var(--accent); color: var(--accent); }
+  .panel {
+    position: fixed; top: 0; bottom: 0; left: 0; width: 340px; z-index: 40;
+    background: var(--panel); backdrop-filter: blur(12px); border-right: 1px solid var(--line);
+    transform: translateX(-105%); transition: transform .35s cubic-bezier(.2,.9,.25,1);
+    display: flex; flex-direction: column; color: var(--txt); text-align: left;
+  }
+  .panel.open { transform: none; }
+  .panel h2 {
+    font-size: 11px; letter-spacing: 2px; color: var(--dim); font-weight: 600;
+    padding: 18px 18px 12px; margin: 0; border-bottom: 1px solid var(--line);
+  }
+  .panel .scroll { overflow-y: auto; flex: 1; }
+  .navitem { display: flex; gap: 12px; padding: 14px 18px; cursor: pointer; border-bottom: 1px solid var(--line); }
+  .navitem:hover { background: #ffffff0a; }
+  .navitem .ico { color: var(--accent); font-size: 14px; width: 18px; text-align: center; }
+  .navitem .name { font-size: 12px; }
+  .navitem .sub { font-size: 10px; color: var(--dim); margin-top: 3px; line-height: 1.4; }
+  .navitem.active { background: #8a9bff14; border-left: 2px solid var(--accent); }
+  .panel-head { display: flex; align-items: center; justify-content: space-between; }
+  .closebtn {
+    background: none; border: none; color: var(--dim); cursor: pointer;
+    font: 13px ui-monospace, Menlo, monospace; padding: 2px 6px;
+  }
+  .closebtn:hover { color: var(--txt); }
+  h1 { font-size: 17px; margin: 14px 0 4px; line-height: 1.35; }
+  .sub { font-size: 11px; color: var(--dim); line-height: 1.6; }
+  .live { color: #7dff9b; }
+
+  #dropzone {
+    margin: 22px 0 14px; border: 1.5px dashed var(--line); border-radius: 10px;
+    padding: 26px 14px; cursor: pointer; transition: .2s;
+    font-size: 12px; color: var(--dim);
+  }
+  #dropzone:hover { border-color: var(--accent); color: var(--accent); }
+  #dropzone.has-clip {
+    border-style: solid; border-color: var(--accent); color: var(--txt);
+    background: linear-gradient(135deg, #8a9bff22, #ff5c8a22);
+  }
+  #dropzone .big { font-size: 26px; display: block; margin-bottom: 8px; }
+
+  #caption {
+    width: 100%; box-sizing: border-box; background: #0c0e18;
+    border: 1px solid var(--line); border-radius: 8px; color: var(--txt);
+    font: 12px ui-monospace, Menlo, monospace; padding: 12px; outline: none;
+  }
+  #caption:focus { border-color: var(--accent); }
+  .hintline { font-size: 9.5px; color: var(--dim); text-align: left; margin: 6px 2px 18px; }
+
+  button.primary {
+    width: 100%; background: var(--accent); border: none; color: #0a0c14;
+    font: 600 12px ui-monospace, Menlo, monospace; letter-spacing: 1px;
+    padding: 13px; border-radius: 8px; cursor: pointer;
+  }
+  button.primary:disabled { opacity: .35; cursor: default; }
+  button.primary:not(:disabled):hover { filter: brightness(1.1); }
+
+  /* one-tap consent */
+  #consent {
+    display: flex; gap: 10px; align-items: flex-start; text-align: left;
+    margin: 0 0 16px; padding: 12px; border: 1px solid var(--line);
+    border-radius: 8px; cursor: pointer; transition: .2s;
+  }
+  #consent:hover { border-color: var(--accent); }
+  #consent.on { border-color: var(--accent); background: #8a9bff12; }
+  #consent .box {
+    width: 16px; height: 16px; border: 1.5px solid var(--dim); border-radius: 4px;
+    flex-shrink: 0; margin-top: 1px; display: flex; align-items: center;
+    justify-content: center; font-size: 11px; color: var(--accent);
+  }
+  #consent.on .box { border-color: var(--accent); }
+  #consent .txt { font-size: 10px; color: var(--dim); line-height: 1.55; }
+  #consent .txt b { color: var(--txt); font-weight: 600; }
+
+  /* pretend validation */
+  #validating { display: none; padding: 10px 0 4px; }
+  .vstep {
+    display: flex; align-items: center; gap: 10px; text-align: left;
+    font-size: 11px; color: var(--dim); padding: 7px 4px; opacity: .35; transition: .3s;
+  }
+  .vstep.active { opacity: 1; color: var(--txt); }
+  .vstep.done { opacity: 1; }
+  .vstep.done .vicon { color: #7dff9b; }
+  .vicon { width: 16px; text-align: center; color: var(--accent); }
+  .vstep.active .vicon { animation: vspin 0.9s linear infinite; }
+  @keyframes vspin { to { transform: rotate(360deg); } }
+
+  /* success state */
+  #success { display: none; }
+  #success .check { font-size: 44px; margin: 8px 0 12px; }
+  #success h1 { font-size: 22px; letter-spacing: 2px; }
+  #success .yourline {
+    margin: 18px 0; padding: 14px; border: 1px solid var(--line); border-radius: 8px;
+    font-size: 12px; color: var(--txt); background: #0c0e18;
+  }
+  #success .yourline small { display: block; color: var(--dim); font-size: 9.5px; margin-top: 6px; letter-spacing: 1px; }
+  a.enter {
+    display: block; background: var(--accent); color: #0a0c14; text-decoration: none;
+    font-weight: 600; font-size: 12px; letter-spacing: 1px; padding: 13px;
+    border-radius: 8px; margin-top: 8px;
+  }
+  a.enter:hover { filter: brightness(1.1); }
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <button class="navbtn" id="nav-btn">☰</button>
+  <a class="brand" href="index.html">RANDOM ACCESS ONE</a>
+  <span class="where">/ ADD YOUR MOMENT</span>
+  <div class="spacer"></div>
+</div>
+
+<div class="panel" id="nav-panel">
+  <h2 class="panel-head">BROWSE <button class="closebtn" id="nav-close">✕</button></h2>
+  <div class="navitem" onclick="location.href='index.html'">
+    <span class="ico">⌂</span>
+    <div><div class="name">Home — Feed</div><div class="sub">posts from people you follow</div></div>
+  </div>
+  <div class="navitem" onclick="location.href='profile.html'">
+    <span class="ico">◉</span>
+    <div><div class="name">@moonkid</div><div class="sub">a profile you follow</div></div>
+  </div>
+  <div class="navitem active">
+    <span class="ico">＋</span>
+    <div><div class="name">Add your moment</div><div class="sub">you are here</div></div>
+  </div>
+  <h2>YOUR CONCERTS</h2>
+  <div class="scroll" id="nav-concerts"></div>
+</div>
+
+<div id="card">
+  <div id="form">
+    <div class="brand">RANDOM ACCESS ONE</div>
+    <h1>Hozier — Outside Lands 2025</h1>
+    <div class="sub"><span class="live">● HAPPENING NOW</span> · you scanned the code, you're here.<br/>Add what you're seeing to the night's timeline.</div>
+
+    <div id="dropzone">
+      <span class="big">＋</span>
+      <span id="dz-label">tap to add the clip or photo you just took</span>
+    </div>
+
+    <input id="caption" maxlength="80" placeholder="one line about this moment…" />
+    <div class="hintline">e.g. “the drop from the rail” · this is what people see next to your clip</div>
+
+    <div id="consent">
+      <div class="box"><span id="consent-check"></span></div>
+      <div class="txt"><b>I shot this and I share it with the night.</b><br/>
+        RA1 Fan Moment License v0.1 — you keep ownership; the event community can
+        watch it here, anchored to its moment. Never scraped, never resold.
+        <span id="consent-stamp"></span></div>
+    </div>
+
+    <div id="validating">
+      <div class="vstep" id="v1"><span class="vicon">◐</span> Matching your clip against the night's audio…</div>
+      <div class="vstep" id="v2"><span class="vicon">◐</span> Checking capture timestamp…</div>
+      <div class="vstep" id="v3"><span class="vicon">◐</span> You were there. Placing it on the timeline…</div>
+    </div>
+
+    <button class="primary" id="submit-btn" disabled>ADD MY MOMENT</button>
+  </div>
+
+  <div id="success">
+    <div class="brand">RANDOM ACCESS ONE</div>
+    <div class="check">✦</div>
+    <h1>YOU'RE IN</h1>
+    <div class="sub">Your moment is now part of the night.<br/>It will appear around the timeline, synced to when you shot it.</div>
+    <div class="yourline">
+      <span id="echo-caption"></span>
+      <small id="echo-meta">YOUR FIRST CONTRIBUTION · HOZIER @ OUTSIDE LANDS</small>
+    </div>
+    <a class="enter" href="concert.html">ENTER THE CONCERT →</a>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { CONCERTS } from './data.js';
+
+// left nav: same panel as the other pages
+const navPanel = document.getElementById('nav-panel');
+document.getElementById('nav-btn').addEventListener('click', () => navPanel.classList.toggle('open'));
+document.getElementById('nav-close').addEventListener('click', () => navPanel.classList.remove('open'));
+document.getElementById('nav-concerts').innerHTML = CONCERTS.map(c =>
+  `<div class="navitem"><span class="ico">♪</span>
+    <div><div class="name">${c.name}</div><div class="sub">${c.sub}</div></div></div>`).join('');
+document.getElementById('nav-concerts').addEventListener('click', e => {
+  if (e.target.closest('.navitem')) location.href = 'concert.html';
+});
+addEventListener('click', e => {
+  if (e.target.closest('canvas') || e.target.closest('#card')) navPanel.classList.remove('open');
+});
+
+// drifting cubes backdrop — the night happening behind the card
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x06060a, 0.05);
+const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 0.1, 100);
+camera.position.set(0, 0, 9);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+document.body.appendChild(renderer.domElement);
+
+scene.add(new THREE.AmbientLight(0x8899bb, 0.55));
+const key = new THREE.DirectionalLight(0xffffff, 1.0);
+key.position.set(4, 6, 8);
+scene.add(key);
+
+const PALETTE = [0xff5c8a, 0x5cc8ff, 0xffc95c, 0x7dff9b, 0xb98cff, 0xff9c5c];
+const cubes = [];
+for (let i = 0; i < 26; i++) {
+  const mesh = new THREE.Mesh(
+    new THREE.BoxGeometry(0.8 + Math.random()*1.2, 0.6 + Math.random()*1.2, 0.15),
+    new THREE.MeshStandardMaterial({
+      color: PALETTE[i % PALETTE.length], roughness: 0.6, metalness: 0.1,
+      transparent: true, opacity: 0.5 + Math.random()*0.3 }));
+  mesh.position.set((Math.random()-0.5)*16, (Math.random()-0.5)*10, -2 - Math.random()*8);
+  scene.add(mesh);
+  cubes.push({ mesh, base: mesh.position.clone(),
+    phase: Math.random()*Math.PI*2, amp: 0.15 + Math.random()*0.25,
+    speed: 0.2 + Math.random()*0.4, rotAmp: 0.05 + Math.random()*0.1 });
+}
+
+const clock = new THREE.Clock();
+(function tick(){
+  requestAnimationFrame(tick);
+  const t = clock.getElapsedTime();
+  for (const c of cubes) {
+    const s = c.speed, p = c.phase;
+    c.mesh.position.set(
+      c.base.x + Math.sin(t*s + p) * c.amp * 2,
+      c.base.y + Math.sin(t*s*0.7 + p*1.7) * c.amp,
+      c.base.z + Math.cos(t*s*0.5 + p) * c.amp);
+    c.mesh.rotation.z = Math.sin(t*s*0.6 + p) * c.rotAmp;
+    c.mesh.rotation.y = Math.cos(t*s*0.4 + p) * c.rotAmp * 1.5;
+  }
+  renderer.render(scene, camera);
+})();
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+// mock submit flow: clip + caption + one-tap consent → pretend validation → in
+const dropzone = document.getElementById('dropzone');
+const dzLabel = document.getElementById('dz-label');
+const caption = document.getElementById('caption');
+const submitBtn = document.getElementById('submit-btn');
+const consent = document.getElementById('consent');
+let hasClip = false, hasConsent = false;
+
+function refresh() {
+  submitBtn.disabled = !(hasClip && hasConsent && caption.value.trim().length > 0);
+}
+dropzone.addEventListener('click', () => {
+  hasClip = true;
+  dropzone.classList.add('has-clip');
+  dropzone.querySelector('.big').textContent = '▣';
+  dzLabel.textContent = 'IMG_2381.mov · 0:14 · just now';
+  refresh();
+  caption.focus();
+});
+consent.addEventListener('click', () => {
+  hasConsent = !hasConsent;
+  consent.classList.toggle('on', hasConsent);
+  document.getElementById('consent-check').textContent = hasConsent ? '✓' : '';
+  document.getElementById('consent-stamp').textContent = hasConsent
+    ? ` Consented ${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC.` : '';
+  refresh();
+});
+caption.addEventListener('input', refresh);
+caption.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !submitBtn.disabled) submitBtn.click();
+});
+
+// pretend validation (demo scope: it only looks like it verifies you were there)
+const steps = ['v1', 'v2', 'v3'].map(id => document.getElementById(id));
+function runStep(i) {
+  if (i > 0) { steps[i-1].classList.replace('active', 'done'); steps[i-1].querySelector('.vicon').textContent = '✓'; }
+  if (i === steps.length) return finish();
+  steps[i].classList.add('active');
+  setTimeout(() => runStep(i + 1), 700 + Math.random() * 500);
+}
+function finish() {
+  const cap = caption.value.trim();
+  sessionStorage.setItem('ra1-your-moment', JSON.stringify({ caption: cap, when: 'now' }));
+  document.getElementById('echo-caption').textContent = `“${cap}”`;
+  document.getElementById('form').style.display = 'none';
+  document.getElementById('success').style.display = 'block';
+}
+submitBtn.addEventListener('click', () => {
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'VERIFYING…';
+  document.getElementById('validating').style.display = 'block';
+  runStep(0);
+});
+</script>
+</body>
+</html>

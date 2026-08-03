@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RANDOM ACCESS ONE — Timeline POC</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #06060a; overflow: hidden; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  canvas { display: block; }
+  #hud {
+    position: fixed; top: 20px; left: 24px; color: #9aa3b2; z-index: 10;
+    pointer-events: none; user-select: none;
+  }
+  #hud h1 { font-size: 13px; letter-spacing: 3px; color: #e8ecf3; margin: 0 0 6px; font-weight: 600; }
+  #hud p { font-size: 11px; margin: 2px 0; opacity: .8; }
+  #moment-label {
+    position: fixed; left: 50%; bottom: 42px; transform: translateX(-50%);
+    color: #e8ecf3; font-size: 14px; letter-spacing: 1px; z-index: 10;
+    pointer-events: none; user-select: none; text-align: center;
+  }
+  #moment-label small { display:block; color:#7c8698; font-size: 10px; letter-spacing: 2px; margin-top: 4px;}
+</style>
+</head>
+<body>
+<div id="hud">
+  <h1>RANDOM ACCESS ONE</h1>
+  <p>scroll / ↑↓ — move between moments</p>
+  <p>←→ — browse fan content around a moment</p>
+</div>
+<div id="moment-label"><span id="ml-title"></span><small id="ml-sub"></small></div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+const MOMENTS = [
+  { title: 'Opening — lights down',      t: '0:00:12' },
+  { title: 'Song 1 — "Static Bloom"',    t: '0:03:40' },
+  { title: 'Guitar solo',                t: '0:07:55' },
+  { title: 'Artist talks to the crowd',  t: '0:11:20' },
+  { title: 'The drop — "Neon Divide"',   t: '0:15:02' },
+  { title: 'Crowd singalong',            t: '0:21:47' },
+  { title: 'Encore — confetti',          t: '0:29:10' },
+];
+
+const MOMENT_SPACING = 9;        // vertical distance between moments
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x06060a, 0.028);
+
+const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 0.1, 200);
+camera.position.set(0, 0, 8.5);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+document.body.appendChild(renderer.domElement);
+
+scene.add(new THREE.AmbientLight(0x8899bb, 0.6));
+const key = new THREE.DirectionalLight(0xffffff, 1.2);
+key.position.set(4, 6, 8);
+scene.add(key);
+const rim = new THREE.PointLight(0x6a5cff, 30, 40);
+rim.position.set(-6, 2, -4);
+scene.add(rim);
+
+// starfield backdrop
+{
+  const g = new THREE.BufferGeometry();
+  const n = 600, pos = new Float32Array(n*3);
+  for (let i=0;i<n;i++){
+    pos[i*3]   = (Math.random()-0.5)*120;
+    pos[i*3+1] = (Math.random()-0.5)*160 - 20;
+    pos[i*3+2] = -20 - Math.random()*60;
+  }
+  g.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  scene.add(new THREE.Points(g, new THREE.PointsMaterial({color:0x39415a, size:0.18})));
+}
+
+// spine line connecting moments — a thin glowing column behind the masters
+{
+  const totalH = (MOMENTS.length - 1) * MOMENT_SPACING;
+  const spine = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.025, 0.025, totalH + 8, 8),
+    new THREE.MeshBasicMaterial({ color: 0x7a8ac8, transparent: true, opacity: 0.85 }));
+  spine.position.set(0, -totalH / 2, -1.2);
+  scene.add(spine);
+  // node dot at each moment
+  MOMENTS.forEach((_, i) => {
+    const dot = new THREE.Mesh(
+      new THREE.SphereGeometry(0.09, 12, 12),
+      new THREE.MeshBasicMaterial({ color: 0xaab8ff }));
+    dot.position.set(0, -i * MOMENT_SPACING, -1.2);
+    scene.add(dot);
+  });
+}
+
+const fanMats = [0xff5c8a, 0x5cc8ff, 0xffc95c, 0x7dff9b, 0xb98cff].map(c =>
+  new THREE.MeshStandardMaterial({ color: c, roughness: 0.55, metalness: 0.1 }));
+const masterMat = new THREE.MeshStandardMaterial({ color: 0xf0f3ff, roughness: 0.3, metalness: 0.2, emissive: 0x222840 });
+
+const fanItems = [];   // { mesh, base:Vector3, target:Vector3, phase, amp, speed, momentIndex }
+const momentGroups = [];
+const masters = [];    // { mesh, target:Vector3, targetScale }
+
+MOMENTS.forEach((m, i) => {
+  const group = new THREE.Group();
+  group.position.y = -i * MOMENT_SPACING;
+  scene.add(group);
+  momentGroups.push(group);
+
+  // master moment cube (bigger, centered)
+  const master = new THREE.Mesh(new THREE.BoxGeometry(2.6, 1.6, 0.25), masterMat);
+  group.add(master);
+  masters.push({ mesh: master, target: new THREE.Vector3(0, 0, 0), targetScale: 1 });
+
+  // faint ring/frame around master
+  const halo = new THREE.Mesh(
+    new THREE.RingGeometry(2.1, 2.16, 48),
+    new THREE.MeshBasicMaterial({ color: 0x4a5580, side: THREE.DoubleSide, transparent:true, opacity:0.5 }));
+  halo.position.z = -0.4;
+  group.add(halo);
+
+  // fan contributions: masonry-ish field left & right, closer = "higher ranked"
+  const count = 6 + Math.floor(Math.random()*6);
+  for (let k = 0; k < count; k++) {
+    const side = k % 2 === 0 ? 1 : -1;
+    const rank = Math.floor(k / 2);                    // 0 = closest
+    const w = 0.9 + Math.random()*0.9;
+    const h = 0.6 + Math.random()*0.9;
+    const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, 0.18),
+      fanMats[Math.floor(Math.random()*fanMats.length)].clone());
+    mesh.material.transparent = true;
+
+    const base = new THREE.Vector3(
+      side * (2.6 + rank * 1.9 + Math.random()*0.5),
+      (Math.random()-0.5) * 3.2,
+      -0.6 - rank*0.55 - Math.random()*0.4            // further rank drifts back
+    );
+    mesh.position.copy(base);
+    mesh.material.opacity = Math.max(0.25, 1 - rank*0.22);
+    group.add(mesh);
+
+    // invisible static hit-plate at the home slot — hover targets this, not the
+    // moving cube, so focus doesn't flicker while the cube animates to center
+    const hit = new THREE.Mesh(
+      new THREE.PlaneGeometry(w * 1.25, h * 1.25),
+      new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }));
+    hit.position.copy(base);
+    group.add(hit);
+
+    fanItems.push({
+      mesh, hit, base, target: base.clone(), targetScale: 1, baseOpacity: mesh.material.opacity,
+      phase: Math.random()*Math.PI*2,
+      amp: 0.12 + Math.random()*0.18,
+      rotAmp: 0.05 + Math.random()*0.08,
+      speed: 0.4 + Math.random()*0.5,
+      momentIndex: i,
+    });
+  }
+});
+
+// --- navigation state ---
+let targetMoment = 0;         // integer index we snap toward
+let scrollPos = 0;            // smoothed continuous position (in moment units)
+let horiz = 0, horizTarget = 0;  // horizontal browse offset
+
+const mlTitle = document.getElementById('ml-title');
+const mlSub = document.getElementById('ml-sub');
+function updateLabel(){
+  const m = MOMENTS[targetMoment];
+  mlTitle.textContent = m.title;
+  mlSub.textContent = `MOMENT ${targetMoment+1}/${MOMENTS.length} · ${m.t}`;
+}
+updateLabel();
+
+let wheelAccum = 0, wheelLock = false;
+addEventListener('wheel', e => {
+  if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+    horizTarget = THREE.MathUtils.clamp(horizTarget + e.deltaX * 0.004, -4, 4);
+    return;
+  }
+  if (wheelLock) return;
+  wheelAccum += e.deltaY;
+  if (Math.abs(wheelAccum) > 60) {
+    targetMoment = THREE.MathUtils.clamp(targetMoment + Math.sign(wheelAccum), 0, MOMENTS.length-1);
+    horizTarget = 0;
+    updateLabel();
+    wheelAccum = 0;
+    wheelLock = true;
+    setTimeout(()=> wheelLock = false, 450);   // snap cooldown
+  }
+}, { passive: true });
+
+addEventListener('keydown', e => {
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    targetMoment = THREE.MathUtils.clamp(targetMoment + (e.key==='ArrowDown'?1:-1), 0, MOMENTS.length-1);
+    horizTarget = 0;
+    updateLabel();
+  }
+  if (e.key === 'ArrowRight') horizTarget = THREE.MathUtils.clamp(horizTarget + 1.2, -4, 4);
+  if (e.key === 'ArrowLeft')  horizTarget = THREE.MathUtils.clamp(horizTarget - 1.2, -4, 4);
+});
+
+// subtle parallax from mouse + hover raycasting
+let mx = 0, my = 0;
+const pointer = new THREE.Vector2();
+const raycaster = new THREE.Raycaster();
+let focusedFan = null;
+let hoverCandidate = null, hoverSince = 0;
+
+// sticky centering: hovering a fan makes it the new center occupant and it
+// STAYS there after unhover; only hovering a different fan changes it
+function setFocus(fan) {
+  if (!fan || fan === focusedFan) return;
+  if (focusedFan) {
+    focusedFan.target.copy(focusedFan.base);
+    focusedFan.targetScale = 1;
+    focusedFan.mesh.material.opacity = focusedFan.baseOpacity;
+  }
+  focusedFan = fan;
+  const m = masters[fan.momentIndex];
+  fan.target.set(0, 0, 1.2);
+  fan.targetScale = 2.1;
+  fan.mesh.material.opacity = 1;
+  m.target.copy(fan.base);
+  m.targetScale = 0.75;
+}
+
+addEventListener('mousemove', e => {
+  mx = (e.clientX/innerWidth - 0.5);
+  my = (e.clientY/innerHeight - 0.5);
+  pointer.set((e.clientX/innerWidth)*2 - 1, -(e.clientY/innerHeight)*2 + 1);
+});
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+const clock = new THREE.Clock();
+function tick(){
+  requestAnimationFrame(tick);
+  const t = clock.getElapsedTime();
+
+  // smooth snap toward target moment
+  scrollPos += (targetMoment - scrollPos) * 0.07;
+  horiz += (horizTarget - horiz) * 0.08;
+
+  camera.position.y = -scrollPos * MOMENT_SPACING + my * -0.6;
+  camera.position.x = horiz + mx * 0.8;
+  camera.lookAt(horiz, -scrollPos * MOMENT_SPACING, 0);
+
+  // hover raycast — only against fan cubes of the active moment
+  {
+    raycaster.setFromCamera(pointer, camera);
+    const activeFans = fanItems.filter(f => f.momentIndex === targetMoment);
+    const settled = Math.abs(targetMoment - scrollPos) < 0.08;  // no hover mid-scroll
+    const hits = settled ? raycaster.intersectObjects(activeFans.map(f => f.hit)) : [];
+    const candidate = hits.length ? activeFans.find(f => f.hit === hits[0].object) : null;
+    // hover intent: dwell on the same slot for a beat before it centers
+    if (candidate !== hoverCandidate) { hoverCandidate = candidate; hoverSince = t; }
+    if (candidate && t - hoverSince > 0.25) setFocus(candidate);
+    document.body.style.cursor = candidate ? 'pointer' : 'default';
+  }
+
+  // floating fan cubes, drifting toward their (possibly relocated) targets
+  for (const f of fanItems) {
+    const p = f.phase, s = f.speed;
+    const isFocused = f === focusedFan;
+    const float = isFocused ? 0.35 : 1;          // calm down when centered
+    f.mesh.position.lerp(f.target, 0.12);
+    f.mesh.position.x += Math.sin(t*s + p) * f.amp * 0.06 * float;
+    f.mesh.position.y += Math.sin(t*s*0.8 + p*1.7) * f.amp * 0.07 * float;
+    f.mesh.position.z += Math.cos(t*s*0.6 + p) * f.amp * 0.04 * float;
+    f.mesh.rotation.z = Math.sin(t*s*0.5 + p) * f.rotAmp * float;
+    f.mesh.rotation.y = Math.cos(t*s*0.4 + p) * f.rotAmp * float;
+    const sc = THREE.MathUtils.lerp(f.mesh.scale.x, f.targetScale, 0.12);
+    f.mesh.scale.setScalar(sc);
+  }
+
+  // masters ease toward their slot (center, or displaced by a focused fan)
+  for (const m of masters) {
+    m.mesh.position.lerp(m.target, 0.1);
+    const sc = THREE.MathUtils.lerp(m.mesh.scale.x, m.targetScale, 0.1);
+    m.mesh.scale.setScalar(sc);
+  }
+
+  // fade non-active moments slightly + gentle master pulse
+  momentGroups.forEach((g, i) => {
+    const d = Math.abs(i - scrollPos);
+    const s = THREE.MathUtils.lerp(1, 0.85, Math.min(d, 1));
+    g.scale.setScalar(s);
+  });
+
+  renderer.render(scene, camera);
+}
+tick();
+</script>
+</body>
+</html>

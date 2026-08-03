@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RANDOM ACCESS ONE — @moonkid</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #06060a; overflow: hidden; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  canvas { display: block; }
+  :root { --panel: rgba(16,18,28,0.92); --line: #262c40; --txt: #e8ecf3; --dim: #7c8698; --accent: #8a9bff; }
+  #topbar {
+    position: fixed; top: 0; left: 0; right: 0; height: 52px; z-index: 20;
+    display: flex; align-items: center; gap: 18px; padding: 0 20px;
+    background: linear-gradient(#0a0c14ee, #0a0c1400);
+  }
+  #topbar .brand { font-size: 12px; letter-spacing: 3px; color: var(--txt); font-weight: 600; text-decoration: none; }
+  #topbar .brand:hover { color: var(--accent); }
+  #topbar .where { font-size: 11px; color: var(--dim); letter-spacing: 2px; }
+  #topbar .spacer { flex: 1; }
+  .navbtn {
+    background: none; border: 1px solid var(--line); color: var(--txt);
+    font: 11px ui-monospace, Menlo, monospace; letter-spacing: 1px;
+    padding: 7px 14px; border-radius: 6px; cursor: pointer; text-decoration: none;
+  }
+  .navbtn:hover { border-color: var(--accent); color: var(--accent); }
+  .panel {
+    position: fixed; top: 0; bottom: 0; left: 0; width: 340px; z-index: 40;
+    background: var(--panel); backdrop-filter: blur(12px); border-right: 1px solid var(--line);
+    transform: translateX(-105%); transition: transform .35s cubic-bezier(.2,.9,.25,1);
+    display: flex; flex-direction: column; color: var(--txt);
+  }
+  .panel.open { transform: none; }
+  .panel h2 {
+    font-size: 11px; letter-spacing: 2px; color: var(--dim); font-weight: 600;
+    padding: 18px 18px 12px; margin: 0; border-bottom: 1px solid var(--line);
+  }
+  .panel .scroll { overflow-y: auto; flex: 1; }
+  .navitem { display: flex; gap: 12px; padding: 14px 18px; cursor: pointer; border-bottom: 1px solid var(--line); }
+  .navitem:hover { background: #ffffff0a; }
+  .navitem .ico { color: var(--accent); font-size: 14px; width: 18px; text-align: center; }
+  .navitem .name { font-size: 12px; }
+  .navitem .sub { font-size: 10px; color: var(--dim); margin-top: 3px; line-height: 1.4; }
+  .navitem.active { background: #8a9bff14; border-left: 2px solid var(--accent); }
+  .panel-head { display: flex; align-items: center; justify-content: space-between; }
+  .closebtn {
+    background: none; border: none; color: var(--dim); cursor: pointer;
+    font: 13px ui-monospace, Menlo, monospace; padding: 2px 6px;
+  }
+  .closebtn:hover { color: var(--txt); }
+
+  /* profile header stack: card + shared-night + follow payoff, never overlapping */
+  #profile-stack {
+    position: fixed; top: 72px; left: 50%; transform: translateX(-50%);
+    z-index: 20; display: flex; flex-direction: column; align-items: center; gap: 10px;
+    pointer-events: none;
+  }
+  #profile-stack > * { pointer-events: auto; }
+  #profile-card {
+    display: flex; align-items: center; gap: 16px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 22px; color: var(--txt); backdrop-filter: blur(12px);
+  }
+  #profile-card .pfp {
+    width: 46px; height: 46px; border-radius: 50%; background: #ff5c8a;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 15px; color: #0a0c14;
+  }
+  #profile-card .handle { font-size: 14px; }
+  #profile-card .bio { font-size: 10.5px; color: var(--dim); margin-top: 3px; }
+  #profile-card .stats { display: flex; gap: 18px; margin-left: 12px; }
+  #profile-card .stat { text-align: center; }
+  #profile-card .stat b { display: block; font-size: 13px; }
+  #profile-card .stat span { font-size: 9.5px; color: var(--dim); letter-spacing: 1px; }
+  #profile-card .follow {
+    margin-left: 10px; border: 1px solid var(--accent); color: var(--accent);
+    background: none; font: 11px ui-monospace, Menlo, monospace;
+    padding: 8px 18px; border-radius: 6px; cursor: pointer; letter-spacing: 1px;
+  }
+  #profile-card .follow:hover, #profile-card .follow.on { background: #8a9bff1a; }
+
+  #shared-night {
+    font-size: 10.5px; color: var(--dim); letter-spacing: .5px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+    padding: 9px 16px; backdrop-filter: blur(12px);
+  }
+  #shared-night b { color: var(--txt); font-weight: 600; }
+  #next-shows {
+    font-size: 10.5px; color: var(--dim); line-height: 1.7; text-align: center;
+    background: var(--panel); border: 1px solid var(--accent); border-radius: 8px;
+    padding: 10px 18px; backdrop-filter: blur(12px);
+    display: none; transition: opacity .4s;
+  }
+  #next-shows.show { display: block; }
+  #next-shows b { color: var(--txt); font-weight: 600; letter-spacing: 1px; }
+
+
+  /* detail panel for an expanded clip */
+  #detail-panel {
+    position: fixed; top: 0; bottom: 0; right: 0; width: 340px; z-index: 30;
+    background: var(--panel); backdrop-filter: blur(12px); border-left: 1px solid var(--line);
+    transform: translateX(105%); transition: transform .35s cubic-bezier(.2,.9,.25,1);
+    display: flex; flex-direction: column; justify-content: center;
+    color: var(--txt); padding: 0 28px; box-sizing: border-box;
+  }
+  #detail-panel.open { transform: none; }
+  #detail-panel .what { font-size: 13px; line-height: 1.5; }
+  #detail-panel .when { font-size: 10.5px; color: var(--dim); margin: 10px 0 26px; }
+  #detail-panel .hint { font-size: 10.5px; color: var(--dim); line-height: 1.6; margin-bottom: 22px; }
+  #detail-panel a {
+    display: inline-block; border: 1px solid var(--accent); color: var(--accent);
+    padding: 10px 16px; border-radius: 6px; font-size: 11px; text-decoration: none; letter-spacing: 1px;
+  }
+  #detail-panel a:hover { background: #8a9bff1a; }
+</style>
+</head>
+<body>
+<div id="topbar">
+  <button class="navbtn" id="nav-btn">☰</button>
+  <a class="brand" href="index.html">RANDOM ACCESS ONE</a>
+  <span class="where">/ @MOONKID</span>
+  <div class="spacer"></div>
+</div>
+
+<div class="panel" id="nav-panel">
+  <h2 class="panel-head">BROWSE <button class="closebtn" id="nav-close">✕</button></h2>
+  <div class="navitem" onclick="location.href='index.html'">
+    <span class="ico">⌂</span>
+    <div><div class="name">Home — Feed</div><div class="sub">posts from people you follow</div></div>
+  </div>
+  <div class="navitem active">
+    <span class="ico">◉</span>
+    <div><div class="name">@moonkid</div><div class="sub">you are here</div></div>
+  </div>
+  <h2>YOUR CONCERTS</h2>
+  <div class="scroll" id="nav-concerts"></div>
+</div>
+
+<div id="profile-stack">
+<div id="profile-card">
+  <div class="pfp">MK</div>
+  <div>
+    <div class="handle">@moonkid</div>
+    <div class="bio">front rail or nothing · 43 shows taped</div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>128</b><span>CLIPS</span></div>
+    <div class="stat"><b>2.4k</b><span>FOLLOWERS</span></div>
+    <div class="stat"><b>17</b><span>CONCERTS</span></div>
+  </div>
+  <button class="follow" id="follow-btn">FOLLOW</button>
+</div>
+<div id="shared-night">
+  ✦ You were both at <b>Hozier — Outside Lands 2025</b>, 12 hours ago. They stood ~10m from you during "Nina Cried Power".
+</div>
+<div id="next-shows">
+  <b>FOLLOWING — YOU'LL SEE EACH OTHER'S NIGHTS</b><br/>
+  ♪ moonkid is going: <b>Neon Divide Tour @ The Forum · Oct 3</b> · <b>Desert Air Fest · Nov 14</b>
+</div>
+</div>
+
+
+<div id="detail-panel">
+  <div class="what"></div>
+  <div class="when"></div>
+  <div class="hint">This clip is synced to its concert timeline. Open the concert to see it in context, with everyone else's angle of the same moment.</div>
+  <a href="concert.html">▶ OPEN THE CONCERT</a>
+</div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { CONCERTS, CONTRIBUTIONS, MOMENTS } from './data.js';
+import { contentMesh, playInto, stopPlayback, setCardOpacity } from './media.js';
+
+// moonkid's real contributions from the shared dataset, newest night first;
+// padded with older-show pseudo clips so the wall reads as a real archive.
+const OLD_TEXTS = [
+  'confetti wall', 'crowd from above', 'soundcheck sneak', 'pit energy',
+  'the quiet verse', 'lights on the crowd', 'backstage line', 'merch haul',
+  'bass face closeup', 'drummer cam', 'phone lights sea', 'rain set!!',
+];
+const CONCERTS_OF = ['Neon Divide @ MSG', 'Primavera Sound', 'KEXP Session'];
+const momentTitle = id => MOMENTS.find(m => m.id === id)?.title ?? '';
+const WALL = [
+  ...CONTRIBUTIONS.filter(c => c.userId === 'moonkid').map(c => ({
+    contrib: c, concert: `Hozier @ Outside Lands — ${momentTitle(c.momentId)}`, when: 'yesterday',
+  })),
+  ...OLD_TEXTS.map((text, i) => ({
+    contrib: { id: `mk-old-${i}`, userId: 'moonkid', caption: text,
+               type: ['video', 'photo', 'video'][i % 3] },
+    concert: CONCERTS_OF[i % CONCERTS_OF.length],
+    when: `${8 + (i * 13) % 40}d ago`,
+  })),
+];
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x06060a, 0.03);
+const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 0.1, 200);
+camera.position.set(0, 0, 7.5);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+document.body.appendChild(renderer.domElement);
+
+scene.add(new THREE.AmbientLight(0x8899bb, 0.6));
+const key = new THREE.DirectionalLight(0xffffff, 1.2);
+key.position.set(4, 6, 8);
+scene.add(key);
+const rim = new THREE.PointLight(0x6a5cff, 30, 40);
+rim.position.set(-6, 2, -4);
+scene.add(rim);
+
+{
+  const g = new THREE.BufferGeometry();
+  const n = 500, pos = new Float32Array(n*3);
+  for (let i=0;i<n;i++){
+    pos[i*3] = (Math.random()-0.5)*120;
+    pos[i*3+1] = (Math.random()-0.5)*160 - 20;
+    pos[i*3+2] = -20 - Math.random()*60;
+  }
+  g.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  scene.add(new THREE.Points(g, new THREE.PointsMaterial({color:0x39415a, size:0.18})));
+}
+
+// masonry: fixed columns, each stacking downward with varied block heights
+const COLS = 5, COL_W = 2.15, GAP = 0.35;
+const colY = new Array(COLS).fill(1.6);         // running bottom per column (top row sits under the header)
+const items = [];
+
+WALL.forEach(entry => {
+  const col = colY.indexOf(Math.max(...colY)); // fill the currently-shortest column (y grows downward)
+  const mesh = contentMesh(entry.contrib, { width: COL_W - GAP });
+  const h = mesh.geometry.parameters.height;
+  const x = (col - (COLS-1)/2) * COL_W;
+  const y = colY[col] - h/2;
+  colY[col] -= h + GAP;
+  const base = new THREE.Vector3(x, y, (Math.random()-0.5)*0.3);
+  mesh.position.copy(base);
+  scene.add(mesh);
+  items.push({
+    mesh, base,
+    post: { text: entry.contrib.caption, concert: entry.concert, when: entry.when },
+    phase: Math.random()*Math.PI*2,
+    amp: 0.035 + Math.random()*0.045,
+    rotAmp: 0.02 + Math.random()*0.04,
+    speed: 0.35 + Math.random()*0.45,
+  });
+});
+const wallBottom = Math.min(...colY);
+
+// scroll the wall vertically
+let scrollY = 0, scrollTarget = 0;
+const maxScroll = -wallBottom - 4;
+addEventListener('wheel', e => {
+  if (expandedItem) return;
+  scrollTarget = THREE.MathUtils.clamp(scrollTarget + e.deltaY * 0.004, 0, maxScroll);
+}, { passive: true });
+
+let expandedItem = null, hovered = null;
+let mx = 0, my = 0;
+const pointer = new THREE.Vector2();
+const raycaster = new THREE.Raycaster();
+addEventListener('mousemove', e => {
+  mx = (e.clientX/innerWidth - 0.5);
+  my = (e.clientY/innerHeight - 0.5);
+  pointer.set((e.clientX/innerWidth)*2 - 1, -(e.clientY/innerHeight)*2 + 1);
+});
+
+const detailPanel = document.getElementById('detail-panel');
+function collapse() {
+  if (expandedItem) stopPlayback(expandedItem.mesh);
+  expandedItem = null;
+  detailPanel.classList.remove('open');
+}
+
+// left nav: same panel as the other pages; picking a concert opens its timeline
+const navPanel = document.getElementById('nav-panel');
+document.getElementById('nav-btn').addEventListener('click', () => navPanel.classList.toggle('open'));
+document.getElementById('nav-close').addEventListener('click', () => navPanel.classList.remove('open'));
+document.getElementById('nav-concerts').innerHTML = CONCERTS.map(c =>
+  `<div class="navitem"><span class="ico">♪</span>
+    <div><div class="name">${c.name}</div><div class="sub">${c.sub}</div></div></div>`).join('');
+document.getElementById('nav-concerts').addEventListener('click', e => {
+  if (e.target.closest('.navitem')) location.href = 'concert.html';
+});
+
+addEventListener('click', (e) => {
+  if (e.target !== renderer.domElement) return;
+  navPanel.classList.remove('open');              // clicking the scene dismisses the nav
+  raycaster.setFromCamera(pointer, camera);
+  const hits = raycaster.intersectObjects(items.map(it => it.mesh));
+  if (!hits.length) { collapse(); return; }
+  const item = items.find(it => it.mesh === hits[0].object);
+  if (expandedItem === item) { collapse(); return; }
+  expandedItem = item;
+  playInto(item.mesh);   // expanded clip plays with sound
+  detailPanel.querySelector('.what').textContent = `“${item.post.text}”`;
+  detailPanel.querySelector('.when').textContent = `@moonkid · ${item.post.when} · ${item.post.concert}`;
+  detailPanel.classList.add('open');
+});
+addEventListener('keydown', e => { if (e.key === 'Escape') collapse(); });
+
+document.getElementById('follow-btn').addEventListener('click', function () {
+  this.classList.toggle('on');
+  const on = this.classList.contains('on');
+  this.textContent = on ? 'FOLLOWING ✓' : 'FOLLOW';
+  document.getElementById('next-shows').classList.toggle('show', on);
+});
+
+const clock = new THREE.Clock();
+let par = 1;
+function tick(){
+  requestAnimationFrame(tick);
+  const t = clock.getElapsedTime();
+
+  scrollY += (scrollTarget - scrollY) * 0.09;
+  par += ((expandedItem ? 0.06 : 1) - par) * 0.08;  // hold still while a clip is expanded
+  camera.position.y = -scrollY + my * -0.4 * par;
+  camera.position.x = mx * 0.5 * par;
+  camera.lookAt(mx * 0.5 * par, -scrollY, 0);
+
+  // hover highlight
+  if (!expandedItem) {
+    raycaster.setFromCamera(pointer, camera);
+    const hits = raycaster.intersectObjects(items.map(it => it.mesh));
+    hovered = hits.length ? items.find(it => it.mesh === hits[0].object) : null;
+    document.body.style.cursor = hovered ? 'pointer' : 'default';
+  } else hovered = null;
+
+  document.getElementById('profile-stack').style.opacity = expandedItem ? 0.15 : 1;
+
+  items.forEach(it => {
+    if (it === expandedItem) {
+      const dist = camera.position.z - 4.6 - 0.15;
+      const viewH = 2 * dist * Math.tan(THREE.MathUtils.degToRad(camera.fov/2));
+      const viewW = viewH * camera.aspect;
+      const pxToWorld = viewW / innerWidth;
+      const PANEL_W = 340, PAD = 40, TOP = 60, BOTTOM = 40;
+      const availWpx = innerWidth - PANEL_W - PAD * 2;
+      const availHpx = innerHeight - TOP - BOTTOM;
+      const maxW = availWpx * pxToWorld;
+      const maxH = availHpx * (viewH / innerHeight);
+      const cx = ((innerWidth - PANEL_W) / 2 - innerWidth / 2) * pxToWorld;
+      const { width: geoW, height: geoH } = it.mesh.geometry.parameters;
+      it.mesh.position.lerp(new THREE.Vector3(cx, -scrollY, 4.6), 0.14);
+      const target = Math.min(maxH / geoH, maxW / geoW);
+      it.mesh.scale.setScalar(THREE.MathUtils.lerp(it.mesh.scale.x, target, 0.14));
+      it.mesh.rotation.set(0, 0, 0);
+      setCardOpacity(it.mesh, 1);
+      return;
+    }
+    const s = it.speed, p = it.phase;
+    it.mesh.position.set(
+      it.base.x + Math.sin(t*s + p) * it.amp,
+      it.base.y + Math.sin(t*s*0.8 + p*1.7) * it.amp * 1.2,
+      it.base.z + Math.cos(t*s*0.6 + p) * it.amp * 0.5);
+    const targetScale = it === hovered ? 1.12 : 1;
+    it.mesh.scale.setScalar(THREE.MathUtils.lerp(it.mesh.scale.x, targetScale, 0.15));
+    it.mesh.rotation.z = Math.sin(t*s*0.5 + p) * it.rotAmp;
+    it.mesh.rotation.y = Math.cos(t*s*0.4 + p) * it.rotAmp;
+    setCardOpacity(it.mesh, expandedItem ? 0.12 : (it === hovered ? 1 : 0.92));
+  });
+
+  renderer.render(scene, camera);
+}
+tick();
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RANDOM ACCESS ONE — Feed</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #06060a; overflow: hidden; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  canvas { display: block; }
+  :root { --panel: rgba(16,18,28,0.92); --line: #262c40; --txt: #e8ecf3; --dim: #7c8698; --accent: #8a9bff; }
+  #topbar {
+    position: fixed; top: 0; left: 0; right: 0; height: 52px; z-index: 20;
+    display: flex; align-items: center; gap: 18px; padding: 0 20px;
+    background: linear-gradient(#0a0c14ee, #0a0c1400);
+  }
+  #topbar .brand { font-size: 12px; letter-spacing: 3px; color: var(--txt); font-weight: 600; }
+  #topbar .spacer { flex: 1; }
+  #topbar .where { font-size: 11px; color: var(--dim); letter-spacing: 2px; }
+  .navbtn {
+    background: none; border: 1px solid var(--line); color: var(--txt);
+    font: 11px ui-monospace, Menlo, monospace; letter-spacing: 1px;
+    padding: 7px 14px; border-radius: 6px; cursor: pointer; text-decoration: none;
+  }
+  .navbtn:hover { border-color: var(--accent); color: var(--accent); }
+  .panel {
+    position: fixed; top: 0; bottom: 0; left: 0; width: 340px; z-index: 30;
+    background: var(--panel); backdrop-filter: blur(12px); border-right: 1px solid var(--line);
+    transform: translateX(-105%); transition: transform .35s cubic-bezier(.2,.9,.25,1);
+    display: flex; flex-direction: column; color: var(--txt);
+  }
+  .panel.open { transform: none; }
+  .panel h2 {
+    font-size: 11px; letter-spacing: 2px; color: var(--dim); font-weight: 600;
+    padding: 18px 18px 12px; margin: 0; border-bottom: 1px solid var(--line);
+  }
+  .panel .scroll { overflow-y: auto; flex: 1; }
+  .navitem { display: flex; gap: 12px; padding: 14px 18px; cursor: pointer; border-bottom: 1px solid var(--line); }
+  .navitem:hover { background: #ffffff0a; }
+  .navitem .ico { color: var(--accent); font-size: 14px; width: 18px; text-align: center; }
+  .navitem .name { font-size: 12px; }
+  .navitem .sub { font-size: 10px; color: var(--dim); margin-top: 3px; line-height: 1.4; }
+  .navitem.active { background: #8a9bff14; border-left: 2px solid var(--accent); }
+  .panel-head { display: flex; align-items: center; justify-content: space-between; }
+  .closebtn {
+    background: none; border: none; color: var(--dim); cursor: pointer;
+    font: 13px ui-monospace, Menlo, monospace; padding: 2px 6px;
+  }
+  .closebtn:hover { color: var(--txt); }
+
+  /* post meta riding beside the centered post — uses the empty side space */
+  #post-label {
+    position: fixed; right: calc(50% + 460px); top: 50%; transform: translateY(-50%);
+    z-index: 10; pointer-events: none; text-align: right; color: var(--txt);
+    max-width: 360px;
+  }
+  #post-label .who { font-size: 16px; }
+  #post-label .who a { color: var(--txt); text-decoration: none; pointer-events: auto; }
+  #post-label .who a:hover { color: var(--accent); text-decoration: underline; }
+  #post-label .what { font-size: 13.5px; color: var(--dim); margin-top: 7px; line-height: 1.55; }
+  #post-label .link { font-size: 12px; color: var(--accent); margin-top: 9px; letter-spacing: 1px; }
+
+  /* locked comments panel (theater mode) */
+  #locked-panel {
+    position: fixed; top: 0; bottom: 0; right: 0; width: 340px; z-index: 30;
+    background: var(--panel); backdrop-filter: blur(12px); border-left: 1px solid var(--line);
+    transform: translateX(105%); transition: transform .35s cubic-bezier(.2,.9,.25,1);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: var(--txt); text-align: center; padding: 0 28px; box-sizing: border-box;
+  }
+  #locked-panel.open { transform: none; }
+  #locked-panel .lock { font-size: 34px; margin-bottom: 14px; }
+  #locked-panel h3 { font-size: 13px; letter-spacing: 1px; margin: 0 0 10px; }
+  #locked-panel p { font-size: 11px; color: var(--dim); line-height: 1.6; margin: 0 0 22px; }
+  #locked-panel a {
+    display: inline-block; border: 1px solid var(--accent); color: var(--accent);
+    padding: 10px 16px; border-radius: 6px; font-size: 11px; text-decoration: none; letter-spacing: 1px;
+  }
+  #locked-panel a:hover { background: #8a9bff1a; }
+</style>
+</head>
+<body>
+<div id="topbar">
+  <button class="navbtn" id="nav-btn">☰</button>
+  <span class="brand">RANDOM ACCESS ONE</span>
+  <span class="where">/ FEED</span>
+  <div class="spacer"></div>
+</div>
+
+<div class="panel" id="nav-panel">
+  <h2 class="panel-head">BROWSE <button class="closebtn" id="nav-close">✕</button></h2>
+  <div class="navitem active">
+    <span class="ico">⌂</span>
+    <div><div class="name">Feed</div><div class="sub">you are here</div></div>
+  </div>
+  <div class="navitem" onclick="location.href='profile.html'">
+    <span class="ico">◉</span>
+    <div><div class="name">@moonkid</div><div class="sub">a profile you follow</div></div>
+  </div>
+  <h2>YOUR CONCERTS</h2>
+  <div class="scroll" id="nav-concerts"></div>
+</div>
+
+<div id="post-label">
+  <div class="who"></div>
+  <div class="what"></div>
+  <div class="link"></div>
+</div>
+
+<div id="locked-panel">
+  <div class="lock">🔒</div>
+  <h3>COMMENTS ARE INSIDE THE CONCERT</h3>
+  <p>Discussion lives on the event timeline, with everyone who was part of that night. Join the concert to read and reply.</p>
+  <a href="concert.html">▶ OPEN HOZIER — OUTSIDE LANDS 2025</a>
+</div>
+
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { CONCERTS, FEED, contribById, userOf } from './data.js';
+import { contentMesh, playInto, stopPlayback, setCardOpacity } from './media.js';
+
+const POSTS = FEED.map(f => {
+  const contrib = contribById(f.contribId);
+  return { contrib, user: userOf(contrib), text: contrib.caption, link: f.link, when: f.when };
+});
+
+const GAP = 0.35;      // vertical breathing room between cards, in world units
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x06060a, 0.03);
+const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 0.1, 200);
+camera.position.set(0, 0, 6.2);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+document.body.appendChild(renderer.domElement);
+
+scene.add(new THREE.AmbientLight(0x8899bb, 0.6));
+const key = new THREE.DirectionalLight(0xffffff, 1.2);
+key.position.set(4, 6, 8);
+scene.add(key);
+const rim = new THREE.PointLight(0x6a5cff, 30, 40);
+rim.position.set(-6, 2, -4);
+scene.add(rim);
+
+{
+  const g = new THREE.BufferGeometry();
+  const n = 500, pos = new Float32Array(n*3);
+  for (let i=0;i<n;i++){
+    pos[i*3] = (Math.random()-0.5)*120;
+    pos[i*3+1] = (Math.random()-0.5)*120;
+    pos[i*3+2] = -20 - Math.random()*60;
+  }
+  g.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  scene.add(new THREE.Points(g, new THREE.PointsMaterial({color:0x39415a, size:0.18})));
+}
+
+// posts as textured cards: real thumbs when present, placeholders otherwise.
+// Spacing adapts to each card's height (landscape clips are short, portrait
+// tall), so the feed stays tight instead of using fixed slots.
+const items = POSTS.map((post, i) => {
+  const mesh = contentMesh(post.contrib);
+  scene.add(mesh);
+  return {
+    post, mesh,
+    phase: Math.random()*Math.PI*2,
+    amp: 0.04 + Math.random()*0.05,
+    rotAmp: 0.03 + Math.random()*0.05,
+    speed: 0.4 + Math.random()*0.5,
+  };
+});
+
+// cumulative center offsets: card i sits at offs[i] down the scroll, spaced
+// by real (center-scale) heights + GAP
+const CENTER_SCALE = 2.1;
+const offs = [];
+{
+  let acc = 0;
+  items.forEach((it, i) => {
+    const h = it.mesh.geometry.parameters.height * CENTER_SCALE;
+    offs.push(acc + h / 2);
+    acc += h + GAP;
+  });
+}
+const offAt = p => {
+  const i = Math.floor(THREE.MathUtils.clamp(p, 0, offs.length - 1));
+  const j = Math.min(i + 1, offs.length - 1);
+  return THREE.MathUtils.lerp(offs[i], offs[j], p - i);
+};
+
+let pos = 0, targetPos = 0;
+let expandedItem = null;
+
+const labelWho = document.querySelector('#post-label .who');
+const labelWhat = document.querySelector('#post-label .what');
+const labelLink = document.querySelector('#post-label .link');
+function updateLabel() {
+  const p = POSTS[Math.round(THREE.MathUtils.clamp(targetPos, 0, POSTS.length-1))];
+  labelWho.innerHTML = `<a href="profile.html">@${p.user.handle}</a> · ${p.when}`;
+  labelWhat.textContent = p.text;
+  labelLink.textContent = `▶ ${p.link}`;
+}
+updateLabel();
+
+// left nav: same panel as the concert page; picking a concert opens its timeline
+const navPanel = document.getElementById('nav-panel');
+document.getElementById('nav-btn').addEventListener('click', () => navPanel.classList.toggle('open'));
+document.getElementById('nav-close').addEventListener('click', () => navPanel.classList.remove('open'));
+document.getElementById('nav-concerts').innerHTML = CONCERTS.map(c =>
+  `<div class="navitem"><span class="ico">♪</span>
+    <div><div class="name">${c.name}</div><div class="sub">${c.sub}</div></div></div>`).join('');
+document.getElementById('nav-concerts').addEventListener('click', e => {
+  if (e.target.closest('.navitem')) location.href = 'concert.html';
+});
+
+const lockedPanel = document.getElementById('locked-panel');
+function collapse() {
+  if (expandedItem) stopPlayback(expandedItem.mesh);
+  expandedItem = null;
+  previewItem = null;   // restart the muted center preview
+  lockedPanel.classList.remove('open');
+}
+
+// muted video preview on whichever post is settled at the center
+let previewItem = null;
+function updatePreview() {
+  const settled = Math.abs(targetPos - pos) < 0.1;
+  const center = settled && !expandedItem ? items[Math.round(pos)] : null;
+  const item = center ?? (expandedItem === previewItem ? previewItem : null);
+  if (item === previewItem) return;
+  if (previewItem && previewItem !== expandedItem) stopPlayback(previewItem.mesh);
+  previewItem = item;
+  if (item) playInto(item.mesh, { muted: true });
+}
+
+// pointer-position scrolling: mouse low on screen → feed flows forward,
+// mouse high → backward; a generous dead zone in the middle holds still
+let mx = 0, my = 0;
+const pointer = new THREE.Vector2();
+const raycaster = new THREE.Raycaster();
+addEventListener('mousemove', e => {
+  mx = (e.clientX/innerWidth - 0.5);
+  my = (e.clientY/innerHeight - 0.5);
+  pointer.set((e.clientX/innerWidth)*2 - 1, -(e.clientY/innerHeight)*2 + 1);
+});
+
+// wheel still works as a fallback — smooth and slow, not one post per tick
+addEventListener('wheel', e => {
+  targetPos = THREE.MathUtils.clamp(targetPos + e.deltaY * 0.0018, 0, POSTS.length-1);
+  updateLabel();
+}, { passive: true });
+
+addEventListener('click', (e) => {
+  if (e.target !== renderer.domElement) return;
+  navPanel.classList.remove('open');              // clicking the scene dismisses the nav
+  raycaster.setFromCamera(pointer, camera);
+  const hits = raycaster.intersectObjects(items.map(it => it.mesh));
+  if (!hits.length) { collapse(); return; }
+  const idx = items.findIndex(it => it.mesh === hits[0].object);
+  if (expandedItem === items[idx]) { collapse(); return; }
+  if (Math.abs(idx - pos) < 0.5) {
+    expandedItem = items[idx];
+    playInto(expandedItem.mesh);          // expanded: sound on
+    lockedPanel.classList.add('open');
+  } else {
+    collapse();
+    targetPos = idx;
+    updateLabel();
+  }
+});
+addEventListener('keydown', e => { if (e.key === 'Escape') collapse(); });
+
+const clock = new THREE.Clock();
+let lastT = 0, par = 1;
+function tick(){
+  requestAnimationFrame(tick);
+  const t = clock.getElapsedTime();
+  const dt = Math.min(t - lastT, 0.05); lastT = t;
+
+  // dead zone ±0.13 around vertical center; speed ramps toward the edges
+  if (!expandedItem) {
+    const dz = 0.13;
+    const drive = Math.abs(my) < dz ? 0 :
+      Math.sign(my) * Math.pow((Math.abs(my) - dz) / (0.5 - dz), 1.8) * 1.1;
+    if (drive !== 0) {
+      targetPos = THREE.MathUtils.clamp(targetPos + drive * dt, 0, POSTS.length - 1);
+      updateLabel();
+    }
+  }
+  pos += (targetPos - pos) * 0.09;
+  updatePreview();
+
+  par += ((expandedItem ? 0.06 : 1) - par) * 0.08;
+  camera.position.x = mx * 0.5 * par;
+  camera.lookAt(0, 0, 0);
+
+  document.getElementById('post-label').style.opacity = expandedItem ? 0 : 1;
+
+  items.forEach((it, i) => {
+    if (it === expandedItem) {
+      const dist = camera.position.z - 3.4 - 0.2;
+      const viewH = 2 * dist * Math.tan(THREE.MathUtils.degToRad(camera.fov/2));
+      const viewW = viewH * camera.aspect;
+      const pxToWorld = viewW / innerWidth;
+      const PANEL_W = 340, PAD = 40, TOP = 60, BOTTOM = 40;
+      const availWpx = innerWidth - PANEL_W - PAD * 2;
+      const availHpx = innerHeight - TOP - BOTTOM;
+      const maxW = availWpx * pxToWorld;
+      const maxH = availHpx * (viewH / innerHeight);
+      const cx = ((innerWidth - PANEL_W) / 2 - innerWidth / 2) * pxToWorld;
+      const { width: geoW, height: geoH } = it.mesh.geometry.parameters;
+      it.mesh.position.lerp(new THREE.Vector3(cx, 0, 3.4), 0.14);
+      const target = Math.min(maxH / geoH, maxW / geoW);
+      it.mesh.scale.setScalar(THREE.MathUtils.lerp(it.mesh.scale.x, target, 0.14));
+      it.mesh.rotation.set(0, 0, 0);
+      setCardOpacity(it.mesh, 1);
+      return;
+    }
+    const d = i - pos;                    // slot offset (for scale/tilt falloff)
+    const ad = Math.abs(d);
+    const y = -(offs[i] - offAt(pos));    // height-aware position
+    const scale = CENTER_SCALE / (1 + 0.22 * ad);
+    const z = -0.3 * ad - (ad > 0.5 ? 0.25 : 0);
+    const s = it.speed, p = it.phase;
+    it.mesh.position.set(
+      Math.sin(t*s + p) * it.amp * 1.4,
+      y + Math.sin(t*s*0.8 + p*1.7) * it.amp,
+      z + Math.cos(t*s*0.6 + p) * it.amp * 0.5);
+    it.mesh.scale.setScalar(scale);
+    it.mesh.rotation.z = Math.sin(t*s*0.5 + p) * it.rotAmp * Math.min(ad, 1);
+    it.mesh.rotation.x = Math.cos(t*s*0.4 + p) * it.rotAmp * Math.min(ad, 1) + d * 0.10;
+    const dim = expandedItem ? 0.12 : 1;
+    setCardOpacity(it.mesh, Math.max(0.15, 1 - ad * 0.2) * dim);
+  });
+
+  renderer.render(scene, camera);
+}
+tick();
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+</script>
+</body>
+</html>
