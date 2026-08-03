@@ -5,10 +5,10 @@
   "type": "module",
   "description": "Random Access One concert-memory timeline, hosted with ChatGPT Sites.",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "vinext dev",
+    "build": "vinext build",
     "postbuild": "node scripts/prepare-dist.mjs",
-    "start": "next start",
+    "start": "vinext start",
     "check": "tsc --noEmit",
     "test": "npm run check"
   },
@@ -18,13 +18,18 @@
   "dependencies": {
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-server-dom-webpack": "latest",
+    "vinext": "latest"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "latest",
+    "@vitejs/plugin-rsc": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "vite": "latest"
   },
   "overrides": {
     "postcss": "8.5.25",

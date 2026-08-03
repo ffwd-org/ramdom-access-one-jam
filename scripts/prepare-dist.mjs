@@ -1,16 +1,23 @@
-import { cpSync, existsSync, rmSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const projectRoot = fileURLToPath(new URL("../", import.meta.url));
-const publicDir = resolve(projectRoot, "public");
 const distDir = resolve(projectRoot, "dist");
+const workerEntry = resolve(distDir, "server", "index.js");
+const hostingSource = resolve(projectRoot, ".openai", "hosting.json");
+const hostingDir = resolve(distDir, ".openai");
+const hostingTarget = resolve(hostingDir, "hosting.json");
 
-if (!existsSync(resolve(publicDir, "index.html"))) {
-  throw new Error("public/index.html is required to package the Site");
+if (!existsSync(workerEntry)) {
+  throw new Error("dist/server/index.js is required to package the Site");
 }
 
-rmSync(distDir, { recursive: true, force: true });
-cpSync(publicDir, distDir, { recursive: true });
+if (!existsSync(hostingSource)) {
+  throw new Error(".openai/hosting.json is required to package the Site");
+}
 
-console.log("Packaged public/ as dist/ for ChatGPT Sites.");
+mkdirSync(hostingDir, { recursive: true });
+copyFileSync(hostingSource, hostingTarget);
+
+console.log("Packaged the Vinext worker and hosting manifest for ChatGPT Sites.");
