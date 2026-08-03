@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RANDOM ACCESS ONE</title>
+<style>
+  :root {
+    --bg: #06060a;
+    --txt: #e8ecf3;
+    --dim: #7c8698;
+    --accent: #8a9bff;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--txt);
+    font-family: var(--mono);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 55% 40% at 50% 108%, #8a9bff26, transparent 70%),
+      radial-gradient(ellipse 35% 25% at 85% -8%, #ff5c8a12, transparent 70%);
+  }
+  main { text-align: center; padding: 24px; position: relative; }
+  .eyebrow {
+    font-size: 11px; letter-spacing: 4px; color: var(--dim);
+    margin-bottom: 28px;
+  }
+  h1 {
+    margin: 0; font-size: clamp(26px, 6vw, 54px);
+    letter-spacing: 8px; font-weight: 700;
+  }
+  h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 24px #8a9bff66; }
+  .tagline {
+    margin-top: 20px; font-size: 12px; letter-spacing: 2px;
+    color: var(--dim);
+  }
+  .enter {
+    display: inline-block; margin-top: 52px;
+    font-family: var(--mono); font-size: 13px; letter-spacing: 4px;
+    color: var(--txt); text-decoration: none;
+    border: 1px solid var(--accent); border-radius: 8px;
+    padding: 16px 48px 16px 52px; /* optical centering for letter-spacing */
+    transition: background .2s, box-shadow .2s, transform .15s;
+  }
+  .enter:hover {
+    background: #8a9bff1a; box-shadow: 0 0 28px #8a9bff33;
+    transform: translateY(-2px);
+  }
+</style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">THE NIGHT DOESN'T HAVE TO END</div>
+    <h1>RANDOM ACCESS <em>ONE</em></h1>
+    <div class="tagline">A SOCIAL SPACE FOR ONE SPECIFIC NIGHT — YOU HAD TO BE THERE</div>
+    <a class="enter" href="public/launch.html">ENTER →</a>
+  </main>
+</body>
+</html>

@@ -77,7 +77,8 @@ The demo night is **Hozier — Outside Lands 2025**, told through 7 moments and
 
 | Page | What it shows |
 |---|---|
-| `public/landing.html` | The pitch: a UX-case-study landing page explaining the problem and the idea |
+| `index.html` (repo root) | Entry gate: title + ENTER button → `public/launch.html` (for GitHub Pages) |
+| `public/launch.html` | The pitch: a UX-case-study landing page explaining the problem and the idea |
 | `public/index.html` | The global feed — the way into event communities |
 | `public/concert.html` | The event timeline: vertical travel through Moments, horizontal exploration of every fan angle around each one |
 | `public/submit.html` | The fan upload flow: QR entry → consent → (fake) validation → your clip on the timeline |
